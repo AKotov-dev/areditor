@@ -80,14 +80,14 @@ procedure TMainForm.ApplyBtnClick(Sender: TObject);
 var
   output: ansistring;
 begin
-  Memo1.Lines.SaveToFile(GetUserDir + '51-android.rules_tmp');
+  Memo1.Lines.SaveToFile(GetUserDir + 'tmp/51-android.rules_tmp');
 
   //Apply rules
   Application.ProcessMessages;
 
   RunCommand('/usr/bin/bash',
     ['-c', '/usr/bin/pkexec /usr/bin/bash -c "cp -f ' + '''' +
-    GetUserDir + '51-android.rules_tmp' + '''' +
+    GetUserDir + 'tmp/51-android.rules_tmp' + '''' +
     ' /usr/lib/udev/rules.d/51-android.rules; udevadm control --reload-rules; udevadm trigger'
     + '"'], output);
 end;
@@ -145,6 +145,9 @@ end;
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
   MainForm.Caption := Application.Title;
+  //Временная директория
+  if not DirectoryExists(GetUserDir + 'tmp') then
+    MkDir(GetUserDir + 'tmp');
 end;
 
 end.
