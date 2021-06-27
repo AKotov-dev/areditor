@@ -1,0 +1,39 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: tmainform.applybtn.caption
+msgid "Apply"
+msgstr ""
+
+#: tmainform.caption
+msgid "MainForm"
+msgstr ""
+
+#: tmainform.defaultbtn.caption
+msgid "Default"
+msgstr ""
+
+#: tmainform.label1.caption
+msgid "1) USB Devices list:"
+msgstr ""
+
+#: tmainform.label2.caption
+msgid "3) /usr/lib/udev/rules.d/51-android.rules:"
+msgstr ""
+
+#: tmainform.label5.caption
+msgid "2) Lines to add to the file /usr/lib/udev/rules.d/51-android.rules:"
+msgstr ""
+
+#: tmainform.statictext1.caption
+msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
+msgstr ""
+
+#: tmainform.updatebtn.caption
+msgid "Update"
+msgstr ""
+
+#: unit1.snoaction
+msgid "The device is already in the list of rules. No action is needed."
+msgstr ""
+

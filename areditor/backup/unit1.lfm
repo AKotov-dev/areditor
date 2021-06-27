@@ -1,8 +1,9 @@
 object MainForm: TMainForm
-  Left = 347
+  Left = 310
   Height = 712
-  Top = 83
+  Top = 122
   Width = 760
+  ActiveControl = DevListBox
   Caption = 'MainForm'
   ClientHeight = 712
   ClientWidth = 760
@@ -12,8 +13,8 @@ object MainForm: TMainForm
   LCLVersion = '2.0.12.0'
   object DevListBox: TListBox
     Left = 0
-    Height = 228
-    Top = 44
+    Height = 232
+    Top = 40
     Width = 760
     Anchors = [akTop, akLeft, akRight]
     Font.Height = -13
@@ -28,7 +29,7 @@ object MainForm: TMainForm
   object Label1: TLabel
     Left = 8
     Height = 15
-    Top = 26
+    Top = 22
     Width = 144
     Caption = '1) USB Devices list:'
     Font.Height = -13
@@ -38,10 +39,10 @@ object MainForm: TMainForm
     ParentFont = False
   end
   object UpdateBtn: TSpeedButton
-    Left = 667
-    Height = 32
-    Top = 8
-    Width = 88
+    Left = 664
+    Height = 30
+    Top = 7
+    Width = 91
     Anchors = [akTop, akRight]
     Caption = 'Update'
     OnClick = UpdateBtnClick
@@ -50,7 +51,7 @@ object MainForm: TMainForm
   end
   object Memo1: TMemo
     Left = 0
-    Height = 304
+    Height = 284
     Top = 408
     Width = 760
     Align = alBottom
@@ -79,7 +80,7 @@ object MainForm: TMainForm
   object Memo2: TMemo
     Left = 0
     Height = 56
-    Top = 312
+    Top = 310
     Width = 759
     Anchors = [akTop, akLeft, akRight]
     Font.Height = -13
@@ -93,7 +94,7 @@ object MainForm: TMainForm
   object Label5: TLabel
     Left = 8
     Height = 15
-    Top = 294
+    Top = 291
     Width = 466
     Caption = '2) Lines to add to the file /usr/lib/udev/rules.d/51-android.rules:'
     Font.Height = -13
@@ -103,21 +104,36 @@ object MainForm: TMainForm
     ParentFont = False
   end
   object ApplyBtn: TSpeedButton
-    Left = 667
+    Left = 664
     Height = 30
-    Top = 375
-    Width = 88
+    Top = 373
+    Width = 91
     Anchors = [akTop, akRight]
     Caption = 'Apply'
     OnClick = ApplyBtnClick
   end
   object DefaultBtn: TSpeedButton
-    Left = 577
+    Left = 564
     Height = 30
-    Top = 375
-    Width = 88
+    Top = 373
+    Width = 96
     Anchors = [akTop, akRight]
     Caption = 'Default'
     OnClick = DefaultBtnClick
+  end
+  object StaticText1: TStaticText
+    Left = 0
+    Height = 20
+    Top = 692
+    Width = 760
+    Align = alBottom
+    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
+    Color = clDefault
+    Font.Color = clGray
+    Font.Height = -11
+    Font.Name = 'Sans'
+    ParentFont = False
+    ParentColor = False
+    TabOrder = 3
   end
 end

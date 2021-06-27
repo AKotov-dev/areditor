@@ -5,7 +5,7 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons, Process;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons, Process, DefaultTranslator;
 
 type
 
@@ -18,6 +18,7 @@ type
     Label5: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;
+    StaticText1: TStaticText;
     UpdateBtn: TSpeedButton;
     ApplyBtn: TSpeedButton;
     DefaultBtn: TSpeedButton;
@@ -35,6 +36,9 @@ type
 
   end;
 
+  resourcestring
+  SNoAction = 'The device is already in the list of rules. No action is needed.';
+
 var
   MainForm: TMainForm;
 
@@ -44,7 +48,7 @@ implementation
 
 { TMainForm }
 
-//StartScan
+//StartScan (Update)
 procedure TMainForm.StartScan;
 var
   ExProcess: TProcess;
@@ -104,10 +108,11 @@ begin
     ['-c', '/usr/bin/pkexec /usr/bin/bash -c "cp -f ' + '''' +
     ExtractFilePath(ParamStr(0)) + '51-android.rules' + '''' +
     ' /usr/lib/udev/rules.d/51-android.rules; udevadm control --reload-rules; udevadm trigger'
-    + '"'], output);
+    + '"' + '; echo $?'], output);
 
-  //Update
-  UpdateBtn.Click;
+  //Ловим отмену и ошибку аутентификации pkexec
+  if (Trim(output) <> '126') and (Trim(output) <> '127') then
+    UpdateBtn.Click;
 end;
 
 //Scan connected USB-devices
@@ -123,22 +128,19 @@ var
 begin
   idVendor := 'ATTR{idVendor}=="' + Copy(DevListBox.Items[DevListBox.ItemIndex],
     24, 4) + '"';
-  //Label3.Caption:='ATTR{idProduct}=="' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
 
   i := Pos(idVendor, Memo1.Text);
   if i <> 0 then
   begin
-    Memo2.Text := 'The device is already in the list of rules. No action is needed.';
+    Memo2.Text := SNoAction;
     Memo1.SelStart := i - 1;
     Memo1.SelLength := 22;
-    //AddBtn.Enabled := False;
   end
   else
   begin
     Memo2.Clear;
     Memo2.Lines.Add('#My Android device');
     Memo2.Lines.Add('SUBSYSTEM=="usb", ' + idVendor + ', ENV{adb_user}="yes"');
-    //AddBtn.Enabled := True;
   end;
 end;
 
