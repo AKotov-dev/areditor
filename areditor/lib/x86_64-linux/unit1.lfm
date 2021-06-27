@@ -1,11 +1,11 @@
 object MainForm: TMainForm
-  Left = 302
+  Left = 337
   Height = 712
-  Top = 121
-  Width = 981
+  Top = 112
+  Width = 760
   Caption = 'MainForm'
   ClientHeight = 712
-  ClientWidth = 981
+  ClientWidth = 760
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
@@ -14,13 +14,14 @@ object MainForm: TMainForm
     Left = 0
     Height = 228
     Top = 44
-    Width = 672
+    Width = 760
+    Anchors = [akTop, akLeft, akRight]
     Font.Height = -13
     Font.Name = 'Monospace'
     ItemHeight = 0
     OnClick = DevListBoxClick
     ParentFont = False
-    ScrollWidth = 670
+    ScrollWidth = 758
     TabOrder = 0
     TopIndex = -1
   end
@@ -37,10 +38,11 @@ object MainForm: TMainForm
     ParentFont = False
   end
   object UpdateBtn: TSpeedButton
-    Left = 592
+    Left = 667
     Height = 32
     Top = 8
-    Width = 80
+    Width = 88
+    Anchors = [akTop, akRight]
     Caption = 'Update'
     OnClick = UpdateBtnClick
     ShowHint = True
@@ -50,7 +52,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 304
     Top = 408
-    Width = 981
+    Width = 760
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
     Font.Height = -13
@@ -78,7 +80,8 @@ object MainForm: TMainForm
     Left = 0
     Height = 56
     Top = 312
-    Width = 981
+    Width = 759
+    Anchors = [akTop, akLeft, akRight]
     Font.Height = -13
     Font.Name = 'Monospace'
     Lines.Strings = (
@@ -100,18 +103,20 @@ object MainForm: TMainForm
     ParentFont = False
   end
   object ApplyBtn: TSpeedButton
-    Left = 888
+    Left = 667
     Height = 30
     Top = 375
     Width = 88
+    Anchors = [akTop, akRight]
     Caption = 'Apply'
     OnClick = ApplyBtnClick
   end
   object DefaultBtn: TSpeedButton
-    Left = 798
+    Left = 577
     Height = 30
     Top = 375
     Width = 88
+    Anchors = [akTop, akRight]
     Caption = 'Default'
     OnClick = DefaultBtnClick
   end

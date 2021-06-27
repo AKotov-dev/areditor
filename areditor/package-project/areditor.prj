@@ -1,0 +1,96 @@
+[NAME]
+name=areditor
+
+[VERSION]
+version=0.1
+
+[RELEASE]
+release=0.mrx8
+
+[GROUP]
+group=Applications/System
+
+[DESCRIPTION]
+0=Rule Editor for Android devices
+1=---
+2=More information: /usr/share/doc/package_name/repack.txt
+
+[MAINTAINER]
+maintainer=Alex Kotov
+
+[VENDOR]
+vendor=alex_q_2000 (C) 2021
+
+[SUMMARY]
+summary=Rule Editor for Android devices
+
+[URLCOPY]
+urlcopy=https://github.com/AKotov-dev/areditor
+
+[LICENSE]
+license=GPLv3
+
+[DEPS]
+deps=
+
+[META]
+meta=0
+
+[NOARCH]
+noarch=0
+
+[SIGN]
+sign=0
+
+[DEB]
+deb=0
+
+[FILES]
+0=/usr/bin/areditor
+1=/usr/share/areditor/
+2=/usr/share/applications/areditor.desktop
+3=/usr/share/icons/areditor.png
+4=/usr/share/doc/areditor/
+
+[AFTERINSTALL]
+0=#ldconfig
+1=#update-desktop-database -q /usr/share/applications
+2=#update-mime-database /usr/share/mime
+3=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
+
+[AFTERREMOVE]
+0=#ldconfig
+1=#update-desktop-database -q /usr/share/applications
+2=#update-mime-database /usr/share/mime
+3=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
+
+[URL32]
+url32=https://github.com/AKotov-dev/areditor
+
+[URL64]
+url64=
+
+[PROGRAMNAME]
+programname=ArEditor
+
+[DEVTOOL]
+devtool=Lazarus
+
+[TOOLVERSION]
+toolversion=2.0.12
+
+[INFO]
+0=ArEditor - 51-android.rules editor for Android devices
+1=---
+2=1. In the list of connected USB-Devices (1), find your device that is not recognized when working with ADB and select it with the mouse
+3=2. If the device is not in the list of rules, the necessary line (2) will be offered to insert into the file with the rules; copy it to the clipboard
+4=3. Paste the contents of the buffer into the field (3) with the contents /usr/lib/udev/rules.d/51-android.rules between any rules by analogy
+5=4. Click the button "Apply". Now the device is contained in the list of rules and should be recognized after the adb restart
+6=
+7=Reasons why Android devices may not be displayed:
+8=---
+9=1. The USB debugging mode is not enabled on the smartphone
+10=2. The device is not in the list of rules /usr/lib/udev/rules.d/51-android.rules
+11=3. The User is not included in the group described in /usr/lib/udev/rules.d/51-android.rules
+12=4. The connection is hindered by the old key, which you need to delete and restart ADB:
+13=     adb kill-server; rm -rf ~/.android/*; adb start-server

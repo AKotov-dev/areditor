@@ -66,7 +66,8 @@ end;
 procedure TMainForm.UpdateBtnClick(Sender: TObject);
 begin
   StartScan;
-  Memo1.Lines.LoadFromFile('/usr/lib/udev/rules.d/51-android.rules');
+  if FileExists('/usr/lib/udev/rules.d/51-android.rules') then
+    Memo1.Lines.LoadFromFile('/usr/lib/udev/rules.d/51-android.rules');
 end;
 
 procedure TMainForm.ApplyBtnClick(Sender: TObject);
@@ -118,7 +119,7 @@ begin
     24, 4) + '"';
   //Label3.Caption:='ATTR{idProduct}=="' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
 
-  i := Pos(idVendor+'1', Memo1.Text);
+  i := Pos(idVendor, Memo1.Text);
   if i <> 0 then
   begin
     Memo2.Text := 'The device is already in the list of rules...';

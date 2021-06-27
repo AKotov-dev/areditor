@@ -66,7 +66,8 @@ end;
 procedure TMainForm.UpdateBtnClick(Sender: TObject);
 begin
   StartScan;
-  Memo1.Lines.LoadFromFile('/usr/lib/udev/rules.d/51-android.rules');
+  if FileExists('/usr/lib/udev/rules.d/51-android.rules') then
+    Memo1.Lines.LoadFromFile('/usr/lib/udev/rules.d/51-android.rules');
 end;
 
 procedure TMainForm.ApplyBtnClick(Sender: TObject);
@@ -121,7 +122,7 @@ begin
   i := Pos(idVendor, Memo1.Text);
   if i <> 0 then
   begin
-    Memo2.Text := 'The device is already in the list of rules...';
+    Memo2.Text := 'The device is already in the list of rules. No action is needed.';
     Memo1.SelStart := i - 1;
     Memo1.SelLength := 22;
     //AddBtn.Enabled := False;
