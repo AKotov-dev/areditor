@@ -88,7 +88,7 @@ begin
   RunCommand('/usr/bin/bash',
     ['-c', '/usr/bin/pkexec /usr/bin/bash -c "cp -f ' + '''' +
     ExtractFilePath(ParamStr(0)) + '51-android.rules_tmp' + '''' +
-    ' /usr/lib/udev/rules.d/51-android.rules; udevadm control --reload-rules; udevadm trigger; echo 222 > /2344444'
+    ' /usr/lib/udev/rules.d/51-android.rules; udevadm control --reload-rules; udevadm trigger'
     + '"'], output);
 end;
 
