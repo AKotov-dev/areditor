@@ -66,7 +66,13 @@ end;
 procedure TMainForm.UpdateBtnClick(Sender: TObject);
 begin
   StartScan;
-  if FileExists('/usr/lib/udev/rules.d/51-android.rules') then
+
+  if not FileExists('/usr/lib/udev/rules.d/51-android.rules') then
+  begin
+    ShowMessage('The file /usr/lib/udev/rules.d/51-android.rules not found!');
+    Close;
+  end
+  else
     Memo1.Lines.LoadFromFile('/usr/lib/udev/rules.d/51-android.rules');
 end;
 
@@ -82,7 +88,7 @@ begin
   RunCommand('/usr/bin/bash',
     ['-c', '/usr/bin/pkexec /usr/bin/bash -c "cp -f ' + '''' +
     ExtractFilePath(ParamStr(0)) + '51-android.rules_tmp' + '''' +
-    ' /usr/lib/udev/rules.d/51-android.rules; udevadm control --reload-rules; udevadm trigger'
+    ' /usr/lib/udev/rules.d/51-android.rules; udevadm control --reload-rules; udevadm trigger; echo 222 > /2344444'
     + '"'], output);
 end;
 
@@ -122,7 +128,7 @@ begin
   i := Pos(idVendor, Memo1.Text);
   if i <> 0 then
   begin
-    Memo2.Text := 'The device is already in the list of rules...';
+    Memo2.Text := 'The device is already in the list of rules. No action is needed.';
     Memo1.SelStart := i - 1;
     Memo1.SelLength := 22;
     //AddBtn.Enabled := False;

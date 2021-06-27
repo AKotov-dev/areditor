@@ -66,7 +66,13 @@ end;
 procedure TMainForm.UpdateBtnClick(Sender: TObject);
 begin
   StartScan;
-  if FileExists('/usr/lib/udev/rules.d/51-android.rules') then
+
+  if not FileExists('/usr/lib/udev/rules.d/51-android.rules') then
+  begin
+    ShowMessage('The file /usr/lib/udev/rules.d/51-android.rules not found!');
+    Close;
+  end
+  else
     Memo1.Lines.LoadFromFile('/usr/lib/udev/rules.d/51-android.rules');
 end;
 
