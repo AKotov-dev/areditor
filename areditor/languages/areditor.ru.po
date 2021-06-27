@@ -29,8 +29,8 @@ msgid "1) USB Devices list:"
 msgstr "1) Список USB-устройств:"
 
 #: tmainform.label2.caption
-msgid "3) /usr/lib/udev/rules.d/51-android.rules:"
-msgstr ""
+msgid "3) File /usr/lib/udev/rules.d/51-android.rules:"
+msgstr "3) Файл /usr/lib/udev/rules.d/51-android.rules:"
 
 #: tmainform.label5.caption
 msgid "2) Lines to add to the file /usr/lib/udev/rules.d/51-android.rules:"
@@ -38,7 +38,7 @@ msgstr "2) Строки для добавления в файл /usr/lib/udev/ru
 
 #: tmainform.statictext1.caption
 msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
-msgstr "Лицензия: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
+msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
 
 #: tmainform.updatebtn.caption
 msgid "Update"

@@ -2,7 +2,7 @@
 {"hash":134403005,"name":"tmainform.caption","sourcebytes":[77,97,105,110,70,111,114,109],"value":"MainForm"},
 {"hash":84247754,"name":"tmainform.label1.caption","sourcebytes":[49,41,32,85,83,66,32,68,101,118,105,99,101,115,32,108,105,115,116,58],"value":"1) USB Devices list:"},
 {"hash":96905381,"name":"tmainform.updatebtn.caption","sourcebytes":[85,112,100,97,116,101],"value":"Update"},
-{"hash":3426474,"name":"tmainform.label2.caption","sourcebytes":[51,41,32,47,117,115,114,47,108,105,98,47,117,100,101,118,47,114,117,108,101,115,46,100,47,53,49,45,97,110,100,114,111,105,100,46,114,117,108,101,115,58],"value":"3) /usr/lib/udev/rules.d/51-android.rules:"},
+{"hash":91993178,"name":"tmainform.label2.caption","sourcebytes":[51,41,32,70,105,108,101,32,47,117,115,114,47,108,105,98,47,117,100,101,118,47,114,117,108,101,115,46,100,47,53,49,45,97,110,100,114,111,105,100,46,114,117,108,101,115,58],"value":"3) File /usr/lib/udev/rules.d/51-android.rules:"},
 {"hash":229305066,"name":"tmainform.label5.caption","sourcebytes":[50,41,32,76,105,110,101,115,32,116,111,32,97,100,100,32,116,111,32,116,104,101,32,102,105,108,101,32,47,117,115,114,47,108,105,98,47,117,100,101,118,47,114,117,108,101,115,46,100,47,53,49,45,97,110,100,114,111,105,100,46,114,117,108,101,115,58],"value":"2) Lines to add to the file /usr/lib/udev/rules.d/51-android.rules:"},
 {"hash":4749113,"name":"tmainform.applybtn.caption","sourcebytes":[65,112,112,108,121],"value":"Apply"},
 {"hash":180128884,"name":"tmainform.defaultbtn.caption","sourcebytes":[68,101,102,97,117,108,116],"value":"Default"},

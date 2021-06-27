@@ -1,12 +1,12 @@
 object MainForm: TMainForm
-  Left = 310
+  Left = 308
   Height = 712
   Top = 122
-  Width = 760
+  Width = 798
   ActiveControl = DevListBox
   Caption = 'MainForm'
   ClientHeight = 712
-  ClientWidth = 760
+  ClientWidth = 798
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
@@ -15,14 +15,14 @@ object MainForm: TMainForm
     Left = 0
     Height = 232
     Top = 40
-    Width = 760
+    Width = 798
     Anchors = [akTop, akLeft, akRight]
     Font.Height = -13
     Font.Name = 'Monospace'
     ItemHeight = 0
     OnClick = DevListBoxClick
     ParentFont = False
-    ScrollWidth = 758
+    ScrollWidth = 796
     TabOrder = 0
     TopIndex = -1
   end
@@ -39,7 +39,7 @@ object MainForm: TMainForm
     ParentFont = False
   end
   object UpdateBtn: TSpeedButton
-    Left = 664
+    Left = 702
     Height = 30
     Top = 7
     Width = 91
@@ -53,7 +53,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 284
     Top = 408
-    Width = 760
+    Width = 798
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
     Font.Height = -13
@@ -63,14 +63,14 @@ object MainForm: TMainForm
     )
     ParentFont = False
     ScrollBars = ssAutoBoth
-    TabOrder = 1
+    TabOrder = 2
   end
   object Label2: TLabel
     Left = 8
     Height = 15
     Top = 388
-    Width = 294
-    Caption = '3) /usr/lib/udev/rules.d/51-android.rules:'
+    Width = 325
+    Caption = '3) File /usr/lib/udev/rules.d/51-android.rules:'
     Font.Height = -13
     Font.Name = 'Sans'
     Font.Style = [fsBold]
@@ -81,7 +81,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 56
     Top = 310
-    Width = 759
+    Width = 797
     Anchors = [akTop, akLeft, akRight]
     Font.Height = -13
     Font.Name = 'Monospace'
@@ -89,7 +89,7 @@ object MainForm: TMainForm
       '...'
     )
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 1
   end
   object Label5: TLabel
     Left = 8
@@ -104,7 +104,7 @@ object MainForm: TMainForm
     ParentFont = False
   end
   object ApplyBtn: TSpeedButton
-    Left = 664
+    Left = 702
     Height = 30
     Top = 373
     Width = 91
@@ -113,7 +113,7 @@ object MainForm: TMainForm
     OnClick = ApplyBtnClick
   end
   object DefaultBtn: TSpeedButton
-    Left = 564
+    Left = 602
     Height = 30
     Top = 373
     Width = 96
@@ -125,7 +125,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 20
     Top = 692
-    Width = 760
+    Width = 798
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
     Color = clDefault

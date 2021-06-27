@@ -18,7 +18,7 @@ msgid "1) USB Devices list:"
 msgstr ""
 
 #: tmainform.label2.caption
-msgid "3) /usr/lib/udev/rules.d/51-android.rules:"
+msgid "3) File /usr/lib/udev/rules.d/51-android.rules:"
 msgstr ""
 
 #: tmainform.label5.caption
