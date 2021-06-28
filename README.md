@@ -11,4 +11,4 @@
 4. The connection is hindered by the old key, which you need to delete and restart ADB:  
 `adb kill-server; rm -rf ~/.android/*; adb start-server`
 
-![](https://github.com/AKotov-dev/areditor/blob/main/ScreenShot.png)
+![](https://github.com/AKotov-dev/areditor/blob/main/ScreenShot2.png)
