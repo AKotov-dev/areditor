@@ -150,7 +150,7 @@ end;
 
 procedure TMainForm.FormShow(Sender: TObject);
 begin
-  RestoreDefault;
+  UpdateBtn.Click;
 end;
 
 procedure TMainForm.DevListBoxClick(Sender: TObject);
