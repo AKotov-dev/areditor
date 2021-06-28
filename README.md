@@ -6,8 +6,8 @@
 
 **Reasons why Android devices may not be displayed:**
 1. The USB debugging mode is not enabled on the smartphone
-2. The device is not in the list of rules /usr/lib/udev/rules.d/51-android.rules
-3. The User is not included in the group described in /usr/lib/udev/rules.d/51-android.rules 
+2. The device is not in the list of rules /etc/udev/rules.d/51-android.rules
+3. The User is not included in the group described in /etc/udev/rules.d/51-android.rules 
 4. The connection is hindered by the old key, which you need to delete and restart ADB:  
 `adb kill-server; rm -rf ~/.android/*; adb start-server`
 
