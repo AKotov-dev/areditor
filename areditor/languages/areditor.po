@@ -18,11 +18,11 @@ msgid "1) USB Devices list:"
 msgstr ""
 
 #: tmainform.label2.caption
-msgid "3) File /usr/lib/udev/rules.d/51-android.rules:"
+msgid "3) File /etc/udev/rules.d/51-android.rules:"
 msgstr ""
 
 #: tmainform.label5.caption
-msgid "2) Lines to add to the file /usr/lib/udev/rules.d/51-android.rules:"
+msgid "2) Lines to add to the file /etc/udev/rules.d/51-android.rules:"
 msgstr ""
 
 #: tmainform.statictext1.caption
@@ -33,7 +33,21 @@ msgstr ""
 msgid "Update"
 msgstr ""
 
+#: unit1.sfilenotfound
+msgid ""
+"The main rules file was not found:\n"
+"/usr/lib/udev/rules.d/51-android.rules\n"
+msgstr ""
+
 #: unit1.snoaction
 msgid "The device is already in the list of rules. No action is needed."
+msgstr ""
+
+#: unit1.snodevices
+msgid "No devices were found..."
+msgstr ""
+
+#: unit1.srestoredefault
+msgid "Your changes will be reset! Continue?"
 msgstr ""
 

@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons, Process, DefaultTranslator;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
+  Buttons, Process, FileUtil, DefaultTranslator;
 
 type
 
@@ -29,6 +30,8 @@ type
     procedure ApplyBtnClick(Sender: TObject);
     procedure DefaultBtnClick(Sender: TObject);
     procedure StartScan;
+    procedure UdevReload;
+    procedure RestoreDefault;
 
   private
 
@@ -36,32 +39,65 @@ type
 
   end;
 
-  resourcestring
+resourcestring
   SNoAction = 'The device is already in the list of rules. No action is needed.';
+  SFileNotFound =
+    'The main rules file was not found:' + #10#13 +
+    '/usr/lib/udev/rules.d/51-android.rules';
+  SNoDevices = 'No devices were found...';
+  SRestoreDefault = 'Your changes will be reset! Continue?';
 
 var
   MainForm: TMainForm;
 
 implementation
 
+uses Udev_TRD;
+
 {$R *.lfm}
 
 { TMainForm }
 
-//StartScan (Update)
+//Restore Default
+procedure TMainForm.RestoreDefault;
+begin
+  UdevReload;
+  UpdateBtn.Click;
+end;
+
+//udev reload
+procedure TMainForm.UdevReload;
+var
+  FUdevReloadThread: TThread;
+begin
+  //Запуск потока отображения статуса
+  FUdevReloadThread := StartUdevReload.Create(False);
+  FUdevReloadThread.Priority := tpNormal;
+end;
+
+//StartScan (Update usb-devices list)
 procedure TMainForm.StartScan;
 var
   ExProcess: TProcess;
 begin
   ExProcess := TProcess.Create(nil);
   try
-    ExProcess.Executable := 'bash';
+    ExProcess.Executable := '/usr/bin/bash';
     ExProcess.Parameters.Add('-c');
-    ExProcess.Parameters.Add('lsusb');
+    ExProcess.Parameters.Add('lsusb | grep -vE "hub|Hub|Reader|Keyboard"');
     ExProcess.Options := [poUsePipes, poStderrToOutPut];
     ExProcess.Execute;
 
     DevListBox.Items.LoadFromStream(ExProcess.Output);
+
+    if DevListBox.Count <> 0 then
+    begin
+      DevListBox.ItemIndex := 0;
+      DevListBox.Click;
+    end
+    else
+      Memo2.Text := SNoDevices;
+
   finally
     ExProcess.Free;
   end;
@@ -69,56 +105,52 @@ end;
 
 procedure TMainForm.UpdateBtnClick(Sender: TObject);
 begin
+  Memo1.Lines.LoadFromFile('/etc/udev/rules.d/51-android.rules');
   StartScan;
-
-  if not FileExists('/usr/lib/udev/rules.d/51-android.rules') then
-  begin
-    ShowMessage('The file /usr/lib/udev/rules.d/51-android.rules not found!');
-    Close;
-  end
-  else
-    Memo1.Lines.LoadFromFile('/usr/lib/udev/rules.d/51-android.rules');
 end;
 
 procedure TMainForm.ApplyBtnClick(Sender: TObject);
-var
-  output: ansistring;
 begin
-  Memo1.Lines.SaveToFile(GetUserDir + 'tmp/51-android.rules_tmp');
+  Memo1.Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
 
   //Apply rules
-  Application.ProcessMessages;
-
-  RunCommand('/usr/bin/bash',
-    ['-c', '/usr/bin/pkexec /usr/bin/bash -c "cp -f ' + '''' +
-    GetUserDir + 'tmp/51-android.rules_tmp' + '''' +
-    ' /usr/lib/udev/rules.d/51-android.rules; udevadm control --reload-rules; udevadm trigger'
-    + '"'], output);
+  UdevReload;
+  DevListBox.Click;
 end;
 
 //Resore Default
 procedure TMainForm.DefaultBtnClick(Sender: TObject);
-var
-  output: ansistring;
 begin
-  //Apply rules
-  Application.ProcessMessages;
+  if MessageDlg(SRestoreDefault, mtWarning, [mbYes, mbNo], 0) = mrYes then
+  begin
+    //Copy Default rules
+    CopyFile('/usr/lib/udev/rules.d/51-android.rules',
+      '/etc/udev/rules.d/51-android.rules', [cffOverwriteFile]);
 
-  RunCommand('/usr/bin/bash',
-    ['-c', '/usr/bin/pkexec /usr/bin/bash -c "cp -f ' + '''' +
-    ExtractFilePath(ParamStr(0)) + '51-android.rules' + '''' +
-    ' /usr/lib/udev/rules.d/51-android.rules; udevadm control --reload-rules; udevadm trigger'
-    + '"' + '; echo $?'], output);
-
-  //Ловим отмену и ошибку аутентификации pkexec
-  if (Trim(output) <> '126') and (Trim(output) <> '127') then
-    UpdateBtn.Click;
+    RestoreDefault;
+  end;
 end;
 
-//Scan connected USB-devices
+procedure TMainForm.FormCreate(Sender: TObject);
+begin
+  //Есть ли основной файл правил? Нет - Выход!
+  if not FileExists('/usr/lib/udev/rules.d/51-android.rules') then
+  begin
+    MessageDlg(SFileNotFound, mtError, [mbOK], 0);
+    Application.Terminate;
+  end
+  else
+  if not FileExists('/etc/udev/rules.d/51-android.rules') then
+    //Copy Default rules
+    CopyFile('/usr/lib/udev/rules.d/51-android.rules',
+      '/etc/udev/rules.d/51-android.rules', [cffOverwriteFile]);
+
+  MainForm.Caption := Application.Title;
+end;
+
 procedure TMainForm.FormShow(Sender: TObject);
 begin
-  UpdateBtn.Click;
+  RestoreDefault;
 end;
 
 procedure TMainForm.DevListBoxClick(Sender: TObject);
@@ -126,6 +158,9 @@ var
   i: integer;
   idVendor: string;
 begin
+  if DevListBox.Count = 0 then
+    Exit;
+
   idVendor := 'ATTR{idVendor}=="' + Copy(DevListBox.Items[DevListBox.ItemIndex],
     24, 4) + '"';
 
@@ -142,14 +177,6 @@ begin
     Memo2.Lines.Add('#My Android device');
     Memo2.Lines.Add('SUBSYSTEM=="usb", ' + idVendor + ', ENV{adb_user}="yes"');
   end;
-end;
-
-procedure TMainForm.FormCreate(Sender: TObject);
-begin
-  MainForm.Caption := Application.Title;
-  //Временная директория
-  if not DirectoryExists(GetUserDir + 'tmp') then
-    MkDir(GetUserDir + 'tmp');
 end;
 
 end.

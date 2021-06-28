@@ -2,7 +2,7 @@
 name=areditor
 
 [VERSION]
-version=0.3
+version=0.4
 
 [RELEASE]
 release=0.mrx8
@@ -31,7 +31,7 @@ urlcopy=https://github.com/AKotov-dev/areditor
 license=GPLv3
 
 [DEPS]
-deps=
+deps=adb
 
 [META]
 meta=0
@@ -51,6 +51,7 @@ deb=0
 2=/usr/share/applications/areditor.desktop
 3=/usr/share/icons/areditor.png
 4=/usr/share/doc/areditor/
+5=/usr/share/polkit-1/actions/areditor.policy
 
 [AFTERINSTALL]
 0=#ldconfig
@@ -94,3 +95,10 @@ toolversion=2.0.12
 11=3. The User is not included in the group described in /usr/lib/udev/rules.d/51-android.rules
 12=4. The connection is hindered by the old key, which you need to delete and restart ADB:
 13=adb kill-server; rm -rf ~/.android/*; adb start-server
+14=
+15=v0.4
+16=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
+17=+ launching via pkexec
+18=+ filtering the lsusb output
+19=+ separate thread for udev
+20=+ adb dependence (spec)

@@ -3,7 +3,7 @@ program areditor;
 {$mode objfpc}{$H+}
 
 uses
-  {$IFDEF UNIX}
+  {$IFDEF UseCThreads}
   cthreads,
   {$ENDIF}
   Interfaces, // this includes the LCL widgetset
