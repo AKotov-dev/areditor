@@ -2,7 +2,7 @@
 name=areditor
 
 [VERSION]
-version=0.4
+version=0.5
 
 [RELEASE]
 release=0.mrx8
@@ -96,9 +96,14 @@ toolversion=2.0.12
 12=4. The connection is hindered by the old key, which you need to delete and restart ADB:
 13=adb kill-server; rm -rf ~/.android/*; adb start-server
 14=
-15=v0.4
-16=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
-17=+ launching via pkexec
-18=+ filtering the lsusb output
-19=+ separate thread for udev
-20=+ adb dependence (spec)
+15=v0.5
+16=+ lsusb "Mouse" filter
+17=+ automatic addition of rules
+18=+ about the program
+19=
+20=v0.4
+21=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
+22=+ launching via pkexec
+23=+ filtering the lsusb output
+24=+ separate thread for udev
+25=+ adb dependence (spec)

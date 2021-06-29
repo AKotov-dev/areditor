@@ -12,29 +12,75 @@ msgstr ""
 "Language: ru\n"
 "X-Generator: Poedit 2.4.2\n"
 
-#: tmainform.applybtn.caption
-msgid "Apply"
-msgstr "Применить"
+#: taboutform.button1.caption
+msgid "Ok"
+msgstr ""
+
+#: taboutform.caption
+msgctxt "taboutform.caption"
+msgid "About"
+msgstr "О программе"
+
+#: taboutform.label1.caption
+msgid "ArEditor"
+msgstr ""
+
+#: taboutform.label2.caption
+msgid ""
+"Automatic addition of rules\n"
+"\n"
+"License: GPLv3\n"
+"Compilation: Lazarus 2.0.12\n"
+"Author: alex_q_2000 (C) 2021\n"
+"\n"
+"Many thanks:\n"
+"Morgan Leijström, David GEIGER,\n"
+"Thomas Backlund, Aurelien Oudelet,\n"
+"Lewis Smith\n"
+msgstr ""
+"Автоматическое добавление правил\n"
+"\n"
+"Лицензия: GPLv3\n"
+"Компиляция: Lazarus 2.0.12\n"
+"Автор: alex_q_2000 (C) 2021\n"
+"\n"
+"Большое спасибо:\n"
+"Morgan Leijström, David GEIGER,\n"
+"Thomas Backlund, Aurelien Oudelet,\n"
+"Lewis Smith\n"
+
+#: tmainform.addbtn.caption
+msgid "Add and apply"
+msgstr ""
+
+#: tmainform.addbtn.hint
+msgid "Add & Apply"
+msgstr "Добавить и Применить"
 
 #: tmainform.caption
 msgid "MainForm"
 msgstr ""
 
-#: tmainform.defaultbtn.caption
-msgid "Default"
-msgstr "Дефолт"
+#: tmainform.defaultbtn.hint
+msgid "Reset to default"
+msgstr "Сбросить в дефолт"
 
 #: tmainform.label1.caption
 msgid "1) USB Devices list:"
 msgstr "1) Список USB-устройств:"
 
 #: tmainform.label2.caption
-msgid "3) File /etc/udev/rules.d/51-android.rules:"
-msgstr "3) Файл /etc/udev/rules.d/51-android.rules:"
+msgid "3) File /etc/udev/rules.d/51-android.rules (read only):"
+msgstr "3) Файл /etc/udev/rules.d/51-android.rules (только чтение):"
 
 #: tmainform.label5.caption
 msgid "2) Lines to add to the file /etc/udev/rules.d/51-android.rules:"
 msgstr "2) Строки для добавления в файл /etc/udev/rules.d/51-android.rules:"
+
+#: tmainform.speedbutton1.hint
+msgctxt "tmainform.speedbutton1.hint"
+msgid "About"
+msgstr "О программе"
 
 #: tmainform.statictext1.caption
 msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
@@ -43,6 +89,10 @@ msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2021   URL: https:
 #: tmainform.updatebtn.caption
 msgid "Update"
 msgstr "Обновить"
+
+#: tmainform.updatebtn.hint
+msgid "Update the list"
+msgstr "Обновить список"
 
 #: unit1.sfilenotfound
 msgid ""

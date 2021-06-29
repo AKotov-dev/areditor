@@ -19,15 +19,17 @@ type
     Label5: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;
+    AddBtn: TSpeedButton;
+    SpeedButton1: TSpeedButton;
     StaticText1: TStaticText;
     UpdateBtn: TSpeedButton;
-    ApplyBtn: TSpeedButton;
     DefaultBtn: TSpeedButton;
+    procedure AddBtnClick(Sender: TObject);
     procedure DevListBoxClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure SpeedButton1Click(Sender: TObject);
     procedure UpdateBtnClick(Sender: TObject);
-    procedure ApplyBtnClick(Sender: TObject);
     procedure DefaultBtnClick(Sender: TObject);
     procedure StartScan;
     procedure UdevReload;
@@ -52,7 +54,7 @@ var
 
 implementation
 
-uses Udev_TRD;
+uses Udev_TRD, About_Unit;
 
 {$R *.lfm}
 
@@ -70,7 +72,7 @@ procedure TMainForm.UdevReload;
 var
   FUdevReloadThread: TThread;
 begin
-  //Запуск потока отображения статуса
+  //Запуск потока udev
   FUdevReloadThread := StartUdevReload.Create(False);
   FUdevReloadThread.Priority := tpNormal;
 end;
@@ -82,9 +84,9 @@ var
 begin
   ExProcess := TProcess.Create(nil);
   try
-    ExProcess.Executable := '/usr/bin/bash';
+    ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
-    ExProcess.Parameters.Add('lsusb | grep -vE "hub|Hub|Reader|Keyboard"');
+    ExProcess.Parameters.Add('lsusb | grep -vE "hub|Hub|Reader|Keyboard|Mouse"');
     ExProcess.Options := [poUsePipes, poStderrToOutPut];
     ExProcess.Execute;
 
@@ -107,15 +109,6 @@ procedure TMainForm.UpdateBtnClick(Sender: TObject);
 begin
   Memo1.Lines.LoadFromFile('/etc/udev/rules.d/51-android.rules');
   StartScan;
-end;
-
-procedure TMainForm.ApplyBtnClick(Sender: TObject);
-begin
-  Memo1.Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
-
-  //Apply rules
-  UdevReload;
-  DevListBox.Click;
 end;
 
 //Resore Default
@@ -153,6 +146,12 @@ begin
   UpdateBtn.Click;
 end;
 
+procedure TMainForm.SpeedButton1Click(Sender: TObject);
+begin
+  AboutForm := TAboutForm.Create(Self);
+  AboutForm.ShowModal;
+end;
+
 procedure TMainForm.DevListBoxClick(Sender: TObject);
 var
   i: integer;
@@ -170,13 +169,35 @@ begin
     Memo2.Text := SNoAction;
     Memo1.SelStart := i - 1;
     Memo1.SelLength := 22;
+    AddBtn.Enabled := False;
   end
   else
   begin
     Memo2.Clear;
-    Memo2.Lines.Add('#My Android device');
+    Memo2.Lines.Add('# My Android device');
     Memo2.Lines.Add('SUBSYSTEM=="usb", ' + idVendor + ', ENV{adb_user}="yes"');
+    Memo1.SelStart := 0;
+    AddBtn.Enabled := True;
   end;
+end;
+
+procedure TMainForm.AddBtnClick(Sender: TObject);
+begin
+  //Insert Rule
+  with Memo1 do
+  begin
+    SetFocus;
+    SelStart := Pos('# Skip other vendor tests', Text);
+    Lines.Insert(CaretPos.Y - 1, '');
+    Lines.Insert(CaretPos.Y + 0, Memo2.Lines[0]);
+    Lines.Insert(CaretPos.Y + 1, Memo2.Lines[1]);
+    Lines.Insert(CaretPos.Y + 2, '');
+  end;
+
+  //Apply rules
+  Memo1.Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
+  UdevReload;
+  DevListBox.Click;
 end;
 
 end.
