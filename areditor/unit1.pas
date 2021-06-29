@@ -98,7 +98,10 @@ begin
       DevListBox.Click;
     end
     else
+    begin
       Memo2.Text := SNoDevices;
+      AddBtn.Enabled := False;
+    end;
 
   finally
     ExProcess.Free;
