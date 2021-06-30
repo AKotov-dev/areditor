@@ -11,9 +11,10 @@ release=0.mrx8
 group=Applications/System
 
 [DESCRIPTION]
-0=Rule Editor for Android devices
-1=---
-2=More information: /usr/share/doc/package_name/repack.txt
+0=ArEditor designed for automatically inserting rules for Android devices
+1=that are not in the lists of rules /etc/udev/rules. d/51-android. rules
+2=---
+3=More information: /usr/share/doc/package_name/repack.txt
 
 [MAINTAINER]
 maintainer=Alex Kotov
@@ -22,7 +23,7 @@ maintainer=Alex Kotov
 vendor=alex_q_2000 (C) 2021
 
 [SUMMARY]
-summary=Rule Editor for Android devices
+summary=Automatic Rule Editor for Android devices
 
 [URLCOPY]
 urlcopy=https://github.com/AKotov-dev/areditor
