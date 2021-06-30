@@ -28,10 +28,6 @@ msgid ""
 "Lewis Smith\n"
 msgstr ""
 
-#: tmainform.addbtn.caption
-msgid "Add and apply"
-msgstr ""
-
 #: tmainform.addbtn.hint
 msgid "Add & Apply"
 msgstr ""
@@ -49,11 +45,11 @@ msgid "1) USB Devices list:"
 msgstr ""
 
 #: tmainform.label2.caption
-msgid "3) File /etc/udev/rules.d/51-android.rules (read only):"
+msgid "3) Rules file (read only) /etc/udev/rules.d/51-android.rules:"
 msgstr ""
 
 #: tmainform.label5.caption
-msgid "2) Lines to add to the file /etc/udev/rules.d/51-android.rules:"
+msgid "2) Rule to insertion or a hint:"
 msgstr ""
 
 #: tmainform.speedbutton1.hint
@@ -63,10 +59,6 @@ msgstr ""
 
 #: tmainform.statictext1.caption
 msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
-msgstr ""
-
-#: tmainform.updatebtn.caption
-msgid "Update"
 msgstr ""
 
 #: tmainform.updatebtn.hint

@@ -146,15 +146,18 @@ end;
 
 procedure TMainForm.FormShow(Sender: TObject);
 begin
+  //Загружаем файл 51-android.rules и перечитываем устройства
   UpdateBtn.Click;
 end;
 
+//О программе
 procedure TMainForm.SpeedButton1Click(Sender: TObject);
 begin
   AboutForm := TAboutForm.Create(Self);
   AboutForm.ShowModal;
 end;
 
+//Поиск idVerndor и установка курсора + select
 procedure TMainForm.DevListBoxClick(Sender: TObject);
 var
   i: integer;
@@ -184,6 +187,7 @@ begin
   end;
 end;
 
+//Добавляем правила устройства
 procedure TMainForm.AddBtnClick(Sender: TObject);
 begin
   //Insert Rule
@@ -199,7 +203,9 @@ begin
 
   //Apply rules
   Memo1.Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
+  //Перименяем новые правила
   UdevReload;
+  //Курсор и select
   DevListBox.Click;
 end;
 

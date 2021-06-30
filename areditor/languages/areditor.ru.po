@@ -49,10 +49,6 @@ msgstr ""
 "Thomas Backlund, Aurelien Oudelet,\n"
 "Lewis Smith\n"
 
-#: tmainform.addbtn.caption
-msgid "Add and apply"
-msgstr ""
-
 #: tmainform.addbtn.hint
 msgid "Add & Apply"
 msgstr "Добавить и Применить"
@@ -70,12 +66,12 @@ msgid "1) USB Devices list:"
 msgstr "1) Список USB-устройств:"
 
 #: tmainform.label2.caption
-msgid "3) File /etc/udev/rules.d/51-android.rules (read only):"
-msgstr "3) Файл /etc/udev/rules.d/51-android.rules (только чтение):"
+msgid "3) Rules file (read only) /etc/udev/rules.d/51-android.rules:"
+msgstr "3) Файл правил (только чтение) /etc/udev/rules.d/51-android.rules:"
 
 #: tmainform.label5.caption
-msgid "2) Lines to add to the file /etc/udev/rules.d/51-android.rules:"
-msgstr "2) Строки для добавления в файл /etc/udev/rules.d/51-android.rules:"
+msgid "2) Rule to insertion or a hint:"
+msgstr "2) Правило для вставки или подсказка:"
 
 #: tmainform.speedbutton1.hint
 msgctxt "tmainform.speedbutton1.hint"
@@ -85,10 +81,6 @@ msgstr "О программе"
 #: tmainform.statictext1.caption
 msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
 msgstr "Лицензия: GPLv3   Автор: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
-
-#: tmainform.updatebtn.caption
-msgid "Update"
-msgstr "Обновить"
 
 #: tmainform.updatebtn.hint
 msgid "Update the list"

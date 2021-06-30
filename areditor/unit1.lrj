@@ -2,12 +2,10 @@
 {"hash":134403005,"name":"tmainform.caption","sourcebytes":[77,97,105,110,70,111,114,109],"value":"MainForm"},
 {"hash":84247754,"name":"tmainform.label1.caption","sourcebytes":[49,41,32,85,83,66,32,68,101,118,105,99,101,115,32,108,105,115,116,58],"value":"1) USB Devices list:"},
 {"hash":83696484,"name":"tmainform.updatebtn.hint","sourcebytes":[85,112,100,97,116,101,32,116,104,101,32,108,105,115,116],"value":"Update the list"},
-{"hash":96905381,"name":"tmainform.updatebtn.caption","sourcebytes":[85,112,100,97,116,101],"value":"Update"},
-{"hash":170904442,"name":"tmainform.label2.caption","sourcebytes":[51,41,32,70,105,108,101,32,47,101,116,99,47,117,100,101,118,47,114,117,108,101,115,46,100,47,53,49,45,97,110,100,114,111,105,100,46,114,117,108,101,115,32,40,114,101,97,100,32,111,110,108,121,41,58],"value":"3) File /etc/udev/rules.d/51-android.rules (read only):"},
-{"hash":77872666,"name":"tmainform.label5.caption","sourcebytes":[50,41,32,76,105,110,101,115,32,116,111,32,97,100,100,32,116,111,32,116,104,101,32,102,105,108,101,32,47,101,116,99,47,117,100,101,118,47,114,117,108,101,115,46,100,47,53,49,45,97,110,100,114,111,105,100,46,114,117,108,101,115,58],"value":"2) Lines to add to the file /etc/udev/rules.d/51-android.rules:"},
+{"hash":179575754,"name":"tmainform.label2.caption","sourcebytes":[51,41,32,82,117,108,101,115,32,102,105,108,101,32,40,114,101,97,100,32,111,110,108,121,41,32,47,101,116,99,47,117,100,101,118,47,114,117,108,101,115,46,100,47,53,49,45,97,110,100,114,111,105,100,46,114,117,108,101,115,58],"value":"3) Rules file (read only) /etc/udev/rules.d/51-android.rules:"},
+{"hash":119902474,"name":"tmainform.label5.caption","sourcebytes":[50,41,32,82,117,108,101,32,116,111,32,105,110,115,101,114,116,105,111,110,32,111,114,32,97,32,104,105,110,116,58],"value":"2) Rule to insertion or a hint:"},
 {"hash":115259332,"name":"tmainform.defaultbtn.hint","sourcebytes":[82,101,115,101,116,32,116,111,32,100,101,102,97,117,108,116],"value":"Reset to default"},
 {"hash":247908389,"name":"tmainform.statictext1.caption","sourcebytes":[76,105,99,101,110,115,101,58,32,71,80,76,118,51,32,32,32,65,117,116,104,111,114,58,32,97,108,101,120,95,113,95,50,48,48,48,32,40,67,41,32,50,48,50,49,32,32,32,85,82,76,58,32,104,116,116,112,115,58,47,47,108,105,110,117,120,102,111,114,117,109,46,114,117],"value":"License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"},
 {"hash":135254297,"name":"tmainform.addbtn.hint","sourcebytes":[65,100,100,32,38,32,65,112,112,108,121],"value":"Add & Apply"},
-{"hash":30285625,"name":"tmainform.addbtn.caption","sourcebytes":[65,100,100,32,97,110,100,32,97,112,112,108,121],"value":"Add and apply"},
 {"hash":4691652,"name":"tmainform.speedbutton1.hint","sourcebytes":[65,98,111,117,116],"value":"About"}
 ]}
