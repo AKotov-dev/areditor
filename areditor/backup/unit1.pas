@@ -157,8 +157,7 @@ begin
   AboutForm.ShowModal;
 end;
 
-//Поиск idVerndor/idPriduct и установка курсора + select
-//если оба найдены, - выделить idVendor, иначе - сделать правило
+//Поиск idVerndor и установка курсора + select
 procedure TMainForm.DevListBoxClick(Sender: TObject);
 var
   v: integer;
@@ -168,15 +167,18 @@ begin
     Exit;
 
   idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
- // idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
+  // idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
 
-  v := Pos(idVendor, Memo1.Text);
+  //Ищем 2 возможных значения вендора
+  v := Pos('ATTR{idVendor}==' + idVendor, Memo1.Text);
+  if v = 0 then
+    v := Pos('ATTR{idVendor}!=' + idVendor, Memo1.Text);
 
   if v <> 0 then
   begin
     Memo2.Text := SNoAction;
     Memo1.SelStart := v - 1;
-    Memo1.SelLength := 6;
+    Memo1.SelLength := 22;
     AddBtn.Enabled := False;
   end
   else
