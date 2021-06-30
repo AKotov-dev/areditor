@@ -2,7 +2,7 @@
 name=areditor
 
 [VERSION]
-version=0.5
+version=0.6
 
 [RELEASE]
 release=0.mrx8
@@ -99,15 +99,19 @@ toolversion=2.0.12
 14=
 15=ArEditor works with the new versions android-tools: https://github.com/AKotov-dev/android-tools-rpm
 16=
-17=v0.5
-18=+ automatic addition of rules
-19=+ non-standard scaling in Plasma is taken into account
-20=+ lsusb "Mouse" filter
-21=+ about the program
-22=
-23=v0.4
-24=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
-25=+ launching via pkexec
-26=+ filtering the lsusb output
-27=+ separate thread for udev
-28=+ adb dependence (spec)
+17=v0.6
+18=+ adapting the search to a new rule format
+19=+ creating a new rule according to the new format
+20=
+21=v0.5
+22=+ automatic addition of rules
+23=+ non-standard scaling in Plasma is taken into account
+24=+ lsusb "Mouse" filter
+25=+ about the program
+26=
+27=v0.4
+28=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
+29=+ launching via pkexec
+30=+ filtering the lsusb output
+31=+ separate thread for udev
+32=+ adb dependence (spec)

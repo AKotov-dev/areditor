@@ -157,31 +157,33 @@ begin
   AboutForm.ShowModal;
 end;
 
-//Поиск idVerndor и установка курсора + select
+//Поиск idVerndor/idPriduct и установка курсора + select
+//если оба найдены, - выделить idVendor, иначе - сделать правило
 procedure TMainForm.DevListBoxClick(Sender: TObject);
 var
-  i: integer;
+  v: integer;
   idVendor: string;
 begin
   if DevListBox.Count = 0 then
     Exit;
 
-  idVendor := 'ATTR{idVendor}=="' + Copy(DevListBox.Items[DevListBox.ItemIndex],
-    24, 4) + '"';
+  idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
+ // idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
 
-  i := Pos(idVendor, Memo1.Text);
-  if i <> 0 then
+  v := Pos(idVendor, Memo1.Text);
+
+  if v <> 0 then
   begin
     Memo2.Text := SNoAction;
-    Memo1.SelStart := i - 1;
-    Memo1.SelLength := 22;
+    Memo1.SelStart := v - 1;
+    Memo1.SelLength := 6;
     AddBtn.Enabled := False;
   end
   else
   begin
     Memo2.Clear;
     Memo2.Lines.Add('# My Android device');
-    Memo2.Lines.Add('SUBSYSTEM=="usb", ' + idVendor + ', ENV{adb_user}="yes"');
+    Memo2.Lines.Add('ATTR{idVendor}==' + idVendor + ', ENV{adb_user}="yes"');
     Memo1.SelStart := 0;
     AddBtn.Enabled := True;
   end;

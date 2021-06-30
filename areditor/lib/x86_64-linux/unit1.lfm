@@ -218,7 +218,6 @@ object MainForm: TMainForm
       ''
     )
     ParentFont = False
-    ReadOnly = True
     ScrollBars = ssAutoBoth
     TabOrder = 2
   end
