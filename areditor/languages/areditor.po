@@ -58,7 +58,7 @@ msgid "3) This program writes the rules to /etc/udev/rules.d/51-android.rules:"
 msgstr ""
 
 #: tmainform.label5.caption
-msgid "2) Rule to insertion or a hint:"
+msgid "2) Rule to insert, or a hint:"
 msgstr ""
 
 #: tmainform.statictext1.caption

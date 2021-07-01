@@ -10,7 +10,7 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '2.0.10.0'
   object DevListBox: TListBox
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = UpdateBtn
@@ -265,10 +265,10 @@ object MainForm: TMainForm
     Left = 8
     Height = 15
     Top = 239
-    Width = 213
+    Width = 196
     BorderSpacing.Top = 18
     BorderSpacing.Bottom = 3
-    Caption = '2) Rule to insertion or a hint:'
+    Caption = '2) Rule to insert, or a hint:'
     Font.Height = -13
     Font.Name = 'Sans'
     Font.Style = [fsBold]
