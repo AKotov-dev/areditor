@@ -917,11 +917,11 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = UpdateBtn
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 666
+    Left = 682
     Height = 42
     Hint = 'About'
     Top = 4
-    Width = 64
+    Width = 48
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 1
     Glyph.Data = {

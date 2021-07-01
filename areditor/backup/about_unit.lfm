@@ -1,12 +1,11 @@
 object AboutForm: TAboutForm
-  Left = 320
-  Height = 296
-  Top = 124
-  Width = 428
-  BorderStyle = bsDialog
+  Left = 415
+  Height = 293
+  Top = 185
+  Width = 453
   Caption = 'About'
-  ClientHeight = 296
-  ClientWidth = 428
+  ClientHeight = 293
+  ClientWidth = 453
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poMainFormCenter
@@ -29,7 +28,7 @@ object AboutForm: TAboutForm
     Height = 180
     Top = 41
     Width = 271
-    Caption = 'Automatic addition of rules'#10#10'License: GPLv3'#10'Compilation: Lazarus 2.0.12'#10'Author: alex_q_2000 (C) 2021'#10#10'Many thanks:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith'#10#10'URL: https://github.com/AKotov-dev/areditor'
+    Caption = 'Automatic addition of rules'#10#10'License: GPLv3'#10'Compilation: Lazarus 2.0.12'#10'Author: alex_q_2000 (C) 2021'#10#10'URL: https://github.com/AKotov-dev/areditor'#10#10'Many thanks:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith'
     ParentColor = False
     ParentFont = False
   end
@@ -39,32 +38,33 @@ object AboutForm: TAboutForm
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Side = asrBottom
     Left = 8
-    Height = 8
-    Top = 241
-    Width = 412
+    Height = 13
+    Top = 237
+    Width = 437
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 8
-    BorderSpacing.Top = 20
+    BorderSpacing.Top = 16
     BorderSpacing.Right = 8
+    BorderSpacing.Bottom = 43
     Shape = bsTopLine
   end
   object Button1: TButton
     AnchorSideLeft.Control = Bevel1
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = Bevel1
-    AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
-    Left = 175
+    Left = 187
     Height = 32
-    Top = 252
+    Top = 249
     Width = 78
-    Anchors = [akLeft, akBottom]
+    BorderSpacing.Top = 12
     BorderSpacing.Right = 172
-    BorderSpacing.Bottom = 12
+    BorderSpacing.Bottom = 9
     Caption = 'Ok'
     OnClick = Button1Click
     ParentFont = False
