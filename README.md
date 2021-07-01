@@ -13,4 +13,4 @@
 
 `ArEditor` works with the new versions `android-tools`: https://github.com/AKotov-dev/android-tools-rpm
 
-![](https://github.com/AKotov-dev/areditor/blob/main/ScreenShot3.png)
+![](https://github.com/AKotov-dev/areditor/blob/main/ScreenShot4.png)
