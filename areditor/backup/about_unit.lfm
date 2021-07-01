@@ -1,11 +1,11 @@
 object AboutForm: TAboutForm
   Left = 320
-  Height = 299
+  Height = 296
   Top = 124
   Width = 428
   BorderStyle = bsDialog
   Caption = 'About'
-  ClientHeight = 299
+  ClientHeight = 296
   ClientWidth = 428
   OnClose = FormClose
   OnCreate = FormCreate
@@ -60,7 +60,7 @@ object AboutForm: TAboutForm
     AnchorSideBottom.Side = asrBottom
     Left = 175
     Height = 32
-    Top = 255
+    Top = 252
     Width = 78
     Anchors = [akLeft, akBottom]
     BorderSpacing.Right = 172
