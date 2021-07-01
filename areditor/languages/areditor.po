@@ -26,10 +26,17 @@ msgid ""
 "Morgan Leijström, David GEIGER,\n"
 "Thomas Backlund, Aurelien Oudelet,\n"
 "Lewis Smith\n"
+"\n"
+"URL: https://github.com/AKotov-dev/areditor\n"
+msgstr ""
+
+#: tmainform.aboutbtn.hint
+msgctxt "tmainform.aboutbtn.hint"
+msgid "About"
 msgstr ""
 
 #: tmainform.addbtn.hint
-msgid "Add & Apply"
+msgid "Add and Apply"
 msgstr ""
 
 #: tmainform.caption
@@ -37,7 +44,9 @@ msgid "MainForm"
 msgstr ""
 
 #: tmainform.defaultbtn.hint
-msgid "Reset to default"
+msgid ""
+"Loads the default rules\n"
+"/usr/lib/udev/rules.d/51-android.rules\n"
 msgstr ""
 
 #: tmainform.label1.caption
@@ -45,16 +54,11 @@ msgid "1) USB Devices list:"
 msgstr ""
 
 #: tmainform.label2.caption
-msgid "3) Rules file (read only) /etc/udev/rules.d/51-android.rules:"
+msgid "3) This program writes the rules to /etc/udev/rules.d/51-android.rules:"
 msgstr ""
 
 #: tmainform.label5.caption
 msgid "2) Rule to insertion or a hint:"
-msgstr ""
-
-#: tmainform.speedbutton1.hint
-msgctxt "tmainform.speedbutton1.hint"
-msgid "About"
 msgstr ""
 
 #: tmainform.statictext1.caption

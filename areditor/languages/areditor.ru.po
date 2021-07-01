@@ -26,6 +26,18 @@ msgid "ArEditor"
 msgstr ""
 
 #: taboutform.label2.caption
+#, fuzzy
+#| msgid ""
+#| "Automatic addition of rules\n"
+#| "\n"
+#| "License: GPLv3\n"
+#| "Compilation: Lazarus 2.0.12\n"
+#| "Author: alex_q_2000 (C) 2021\n"
+#| "\n"
+#| "Many thanks:\n"
+#| "Morgan Leijström, David GEIGER,\n"
+#| "Thomas Backlund, Aurelien Oudelet,\n"
+#| "Lewis Smith\n"
 msgid ""
 "Automatic addition of rules\n"
 "\n"
@@ -37,6 +49,8 @@ msgid ""
 "Morgan Leijström, David GEIGER,\n"
 "Thomas Backlund, Aurelien Oudelet,\n"
 "Lewis Smith\n"
+"\n"
+"URL: https://github.com/AKotov-dev/areditor\n"
 msgstr ""
 "Автоматическое добавление правил\n"
 "\n"
@@ -49,8 +63,13 @@ msgstr ""
 "Thomas Backlund, Aurelien Oudelet,\n"
 "Lewis Smith\n"
 
+#: tmainform.aboutbtn.hint
+msgctxt "tmainform.aboutbtn.hint"
+msgid "About"
+msgstr "О программе"
+
 #: tmainform.addbtn.hint
-msgid "Add & Apply"
+msgid "Add and Apply"
 msgstr "Добавить и Применить"
 
 #: tmainform.caption
@@ -58,25 +77,24 @@ msgid "MainForm"
 msgstr ""
 
 #: tmainform.defaultbtn.hint
-msgid "Reset to default"
-msgstr "Сбросить в дефолт"
+msgid ""
+"Loads the default rules\n"
+"/usr/lib/udev/rules.d/51-android.rules\n"
+msgstr ""
+"Загрузить правила по умолчанию\n"
+"/usr/lib/udev/rules.d/51-android.rules\n"
 
 #: tmainform.label1.caption
 msgid "1) USB Devices list:"
 msgstr "1) Список USB-устройств:"
 
 #: tmainform.label2.caption
-msgid "3) Rules file (read only) /etc/udev/rules.d/51-android.rules:"
-msgstr "3) Файл правил (только чтение) /etc/udev/rules.d/51-android.rules:"
+msgid "3) This program writes the rules to /etc/udev/rules.d/51-android.rules:"
+msgstr "3) Программа записывает правила в /etc/udev/rules.d/51-android.rules:"
 
 #: tmainform.label5.caption
 msgid "2) Rule to insertion or a hint:"
 msgstr "2) Правило для вставки или подсказка:"
-
-#: tmainform.speedbutton1.hint
-msgctxt "tmainform.speedbutton1.hint"
-msgid "About"
-msgstr "О программе"
 
 #: tmainform.statictext1.caption
 msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"
@@ -105,3 +123,4 @@ msgstr "Устройства не найдены..."
 #: unit1.srestoredefault
 msgid "Your changes will be reset! Continue?"
 msgstr "Ваши изменения будут сброшены! Продолжить?"
+

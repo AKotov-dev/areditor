@@ -20,7 +20,7 @@ type
     Memo1: TMemo;
     Memo2: TMemo;
     AddBtn: TSpeedButton;
-    SpeedButton1: TSpeedButton;
+    AboutBtn: TSpeedButton;
     StaticText1: TStaticText;
     UpdateBtn: TSpeedButton;
     DefaultBtn: TSpeedButton;
@@ -28,7 +28,7 @@ type
     procedure DevListBoxClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure AboutBtnClick(Sender: TObject);
     procedure UpdateBtnClick(Sender: TObject);
     procedure DefaultBtnClick(Sender: TObject);
     procedure StartScan;
@@ -123,6 +123,7 @@ begin
     CopyFile('/usr/lib/udev/rules.d/51-android.rules',
       '/etc/udev/rules.d/51-android.rules', [cffOverwriteFile]);
 
+    Application.ProcessMessages;
     RestoreDefault;
   end;
 end;
@@ -151,7 +152,7 @@ begin
 end;
 
 //О программе
-procedure TMainForm.SpeedButton1Click(Sender: TObject);
+procedure TMainForm.AboutBtnClick(Sender: TObject);
 begin
   AboutForm := TAboutForm.Create(Self);
   AboutForm.ShowModal;
@@ -204,13 +205,14 @@ begin
     Lines.Insert(CaretPos.Y + 1, Memo2.Lines[1]);
     Lines.Insert(CaretPos.Y + 2, '');
   end;
-
-  //Apply rules
+  //Сохраняем новые правила
   Memo1.Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
+
+  //Курсор и Select
+  DevListBox.Click;
+
   //Перименяем новые правила
   UdevReload;
-  //Курсор и select
-  DevListBox.Click;
 end;
 
 end.
