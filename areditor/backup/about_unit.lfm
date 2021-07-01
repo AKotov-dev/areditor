@@ -1,11 +1,11 @@
 object AboutForm: TAboutForm
   Left = 415
-  Height = 293
+  Height = 297
   Top = 185
-  Width = 453
+  Width = 457
   Caption = 'About'
-  ClientHeight = 293
-  ClientWidth = 453
+  ClientHeight = 297
+  ClientWidth = 457
   OnClose = FormClose
   OnCreate = FormCreate
   Position = poMainFormCenter
@@ -31,44 +31,6 @@ object AboutForm: TAboutForm
     Caption = 'Automatic addition of rules'#10#10'License: GPLv3'#10'Compilation: Lazarus 2.0.12'#10'Author: alex_q_2000 (C) 2021'#10#10'URL: https://github.com/AKotov-dev/areditor'#10#10'Many thanks:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith'
     ParentColor = False
     ParentFont = False
-  end
-  object Bevel1: TBevel
-    AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = Label2
-    AnchorSideTop.Side = asrBottom
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Side = asrBottom
-    Left = 8
-    Height = 13
-    Top = 237
-    Width = 437
-    Anchors = [akTop, akLeft, akRight]
-    BorderSpacing.Left = 8
-    BorderSpacing.Top = 16
-    BorderSpacing.Right = 8
-    BorderSpacing.Bottom = 43
-    Shape = bsTopLine
-  end
-  object Button1: TButton
-    AnchorSideLeft.Control = Bevel1
-    AnchorSideLeft.Side = asrCenter
-    AnchorSideTop.Control = Bevel1
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Control = Owner
-    AnchorSideBottom.Side = asrBottom
-    Left = 187
-    Height = 32
-    Top = 249
-    Width = 78
-    BorderSpacing.Top = 12
-    BorderSpacing.Right = 172
-    BorderSpacing.Bottom = 9
-    Caption = 'Ok'
-    OnClick = Button1Click
-    ParentFont = False
-    TabOrder = 0
   end
   object Image1: TImage
     Left = 8
@@ -128,5 +90,52 @@ object AboutForm: TAboutForm
       84E97BAFCEAC23E2FFF6599ED20FF3AB1C1404808200FE0566A8AE5A4A2C5CB3
       0000000049454E44AE426082
     }
+  end
+  object Panel1: TPanel
+    AnchorSideTop.Control = Label2
+    AnchorSideTop.Side = asrBottom
+    Left = 0
+    Height = 70
+    Top = 227
+    Width = 457
+    Align = alBottom
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BorderSpacing.Top = 6
+    BevelOuter = bvNone
+    ClientHeight = 70
+    ClientWidth = 457
+    TabOrder = 0
+    object Button1: TButton
+      AnchorSideLeft.Control = Bevel1
+      AnchorSideLeft.Side = asrCenter
+      AnchorSideTop.Control = Bevel1
+      AnchorSideRight.Control = Owner
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Side = asrBottom
+      Left = 189
+      Height = 35
+      Top = 22
+      Width = 78
+      BorderSpacing.Top = 12
+      BorderSpacing.Right = 172
+      BorderSpacing.Bottom = 9
+      Caption = 'Ok'
+      OnClick = Button1Click
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Bevel1: TBevel
+      AnchorSideBottom.Side = asrBottom
+      Left = 8
+      Height = 8
+      Top = 10
+      Width = 441
+      Anchors = [akLeft, akRight]
+      BorderSpacing.Left = 8
+      BorderSpacing.Top = 16
+      BorderSpacing.Right = 8
+      BorderSpacing.Bottom = 43
+      Shape = bsTopLine
+    end
   end
 end

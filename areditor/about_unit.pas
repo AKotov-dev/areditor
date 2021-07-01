@@ -12,11 +12,11 @@ type
   { TAboutForm }
 
   TAboutForm = class(TForm)
-    Bevel1: TBevel;
     Button1: TButton;
     Image1: TImage;
     Label1: TLabel;
     Label2: TLabel;
+    Panel2: TPanel;
     procedure Button1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);

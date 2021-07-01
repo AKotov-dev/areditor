@@ -1,16 +1,16 @@
 object MainForm: TMainForm
-  Left = 303
-  Height = 710
-  Top = 124
+  Left = 299
+  Height = 753
+  Top = 128
   Width = 800
   ActiveControl = DevListBox
   Caption = 'MainForm'
-  ClientHeight = 710
+  ClientHeight = 753
   ClientWidth = 800
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
-  LCLVersion = '2.0.12.0'
+  LCLVersion = '2.0.10.0'
   object DevListBox: TListBox
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = UpdateBtn
@@ -206,7 +206,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StaticText1
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 331
+    Height = 374
     Top = 361
     Width = 800
     Align = alBottom
@@ -589,7 +589,7 @@ object MainForm: TMainForm
   object StaticText1: TStaticText
     Left = 0
     Height = 18
-    Top = 692
+    Top = 735
     Width = 800
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
