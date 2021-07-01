@@ -17,7 +17,6 @@ type
     Image1: TImage;
     Label1: TLabel;
     Label2: TLabel;
-    Panel1: TPanel;
     procedure Button1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
