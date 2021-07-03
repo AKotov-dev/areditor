@@ -20,6 +20,7 @@ type
     procedure Button1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
 
   public
@@ -38,6 +39,13 @@ implementation
 procedure TAboutForm.FormCreate(Sender: TObject);
 begin
   Label1.Caption := Application.Title;
+end;
+
+procedure TAboutForm.FormShow(Sender: TObject);
+begin
+  //Sca
+    AboutForm.Height:=Button1.Top + Button1.Height + 10;
+    AboutForm.Width:=Label2.Left+Label2.Width + 20;
 end;
 
 procedure TAboutForm.Button1Click(Sender: TObject);

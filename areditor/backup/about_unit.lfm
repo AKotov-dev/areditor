@@ -1,13 +1,15 @@
 object AboutForm: TAboutForm
   Left = 415
-  Height = 309
+  Height = 299
   Top = 185
   Width = 461
+  Anchors = [akLeft]
   Caption = 'About'
-  ClientHeight = 309
+  ClientHeight = 299
   ClientWidth = 461
   OnClose = FormClose
   OnCreate = FormCreate
+  OnShow = FormShow
   Position = poMainFormCenter
   LCLVersion = '2.0.10.0'
   object Label1: TLabel
@@ -27,8 +29,10 @@ object AboutForm: TAboutForm
     Left = 128
     Height = 180
     Top = 41
-    Width = 271
+    Width = 285
     Caption = 'Automatic addition of rules'#10#10'License: GPLv3'#10'Compilation: Lazarus 2.0.10'#10'Author: alex_q_2000 (C) 2021'#10#10'URL: https://github.com/AKotov-dev/areditor'#10#10'Many thanks:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith'
+    Font.Height = -13
+    Font.Name = 'Sans'
     ParentColor = False
     ParentFont = False
   end
@@ -97,11 +101,11 @@ object AboutForm: TAboutForm
     AnchorSideBottom.Side = asrBottom
     Left = 8
     Height = 8
-    Top = 246
+    Top = 238
     Width = 449
-    Anchors = [akLeft, akRight]
+    Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 8
-    BorderSpacing.Top = 18
+    BorderSpacing.Top = 17
     BorderSpacing.Right = 8
     BorderSpacing.Bottom = 43
     Shape = bsTopLine
@@ -115,7 +119,7 @@ object AboutForm: TAboutForm
     AnchorSideBottom.Side = asrBottom
     Left = 193
     Height = 35
-    Top = 261
+    Top = 253
     Width = 78
     BorderSpacing.Top = 15
     BorderSpacing.Right = 172
