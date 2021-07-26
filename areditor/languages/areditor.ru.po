@@ -82,6 +82,14 @@ msgstr "1) Список USB-устройств:"
 msgid "3) This program writes the rules to /etc/udev/rules.d/51-android.rules:"
 msgstr "3) Программа записывает правила в /etc/udev/rules.d/51-android.rules:"
 
+#: tmainform.label3.caption
+msgid ""
+"Don't forget to include the user in the adbusers group:\n"
+"usermod -aG adbusers $LOGNAME; reboot\n"
+msgstr ""
+"Не забудьте включить пользователя в группу adbusers:\n"
+"usermod -aG adbusers $LOGNAME; reboot\n"
+
 #: tmainform.label5.caption
 msgid "2) Rule to insert, or a hint:"
 msgstr "2) Правило для вставки или подсказка:"

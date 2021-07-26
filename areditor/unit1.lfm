@@ -2,11 +2,11 @@ object MainForm: TMainForm
   Left = 303
   Height = 710
   Top = 124
-  Width = 800
+  Width = 803
   ActiveControl = DevListBox
   Caption = 'MainForm'
   ClientHeight = 710
-  ClientWidth = 800
+  ClientWidth = 803
   OnCreate = FormCreate
   OnShow = FormShow
   Position = poDesktopCenter
@@ -20,7 +20,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 171
     Top = 50
-    Width = 800
+    Width = 803
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 4
     Font.Height = -13
@@ -28,7 +28,7 @@ object MainForm: TMainForm
     ItemHeight = 0
     OnClick = DevListBoxClick
     ParentFont = False
-    ScrollWidth = 798
+    ScrollWidth = 801
     TabOrder = 0
     TopIndex = -1
   end
@@ -52,7 +52,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Cursor = crHandPoint
-    Left = 731
+    Left = 734
     Height = 42
     Hint = 'Update the list'
     Top = 4
@@ -208,7 +208,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 331
     Top = 361
-    Width = 800
+    Width = 803
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 5
@@ -247,7 +247,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 64
     Top = 259
-    Width = 665
+    Width = 668
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
     BorderSpacing.Right = 1
@@ -282,7 +282,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 731
+    Left = 734
     Height = 64
     Hint = 'Loads the default rules'#10'/usr/lib/udev/rules.d/51-android.rules'
     Top = 259
@@ -590,7 +590,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 18
     Top = 692
-    Width = 800
+    Width = 803
     Align = alBottom
     Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
     Color = clDefault
@@ -607,7 +607,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 666
+    Left = 669
     Height = 64
     Hint = 'Add and Apply'
     Top = 259
@@ -917,7 +917,7 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = UpdateBtn
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 682
+    Left = 685
     Height = 42
     Hint = 'About'
     Top = 4
@@ -1060,5 +1060,21 @@ object MainForm: TMainForm
     ShowCaption = False
     ShowHint = True
     ParentShowHint = False
+  end
+  object Label3: TLabel
+    AnchorSideTop.Control = AboutBtn
+    AnchorSideRight.Control = AboutBtn
+    Left = 329
+    Height = 30
+    Top = 4
+    Width = 352
+    Anchors = [akTop, akRight]
+    BorderSpacing.Right = 4
+    Caption = 'Don''t forget to include the user in the adbusers group:'#10'usermod -aG adbusers $LOGNAME; reboot'
+    Font.Height = -13
+    Font.Name = 'Sans'
+    Font.Style = [fsItalic]
+    ParentColor = False
+    ParentFont = False
   end
 end

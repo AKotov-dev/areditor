@@ -43,9 +43,9 @@ end;
 
 procedure TAboutForm.FormShow(Sender: TObject);
 begin
-  //Sca
-    AboutForm.Height:=Button1.Top + Button1.Height + 10;
-    AboutForm.Width:=Label2.Left+Label2.Width + 20;
+  //Scaling in Plasma
+  AboutForm.Height := Button1.Top + Button1.Height + 10;
+  AboutForm.Width := Label2.Left + Label2.Width + 20;
 end;
 
 procedure TAboutForm.Button1Click(Sender: TObject);

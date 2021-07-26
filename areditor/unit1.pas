@@ -16,6 +16,7 @@ type
     Label1: TLabel;
     DevListBox: TListBox;
     Label2: TLabel;
+    Label3: TLabel;
     Label5: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;

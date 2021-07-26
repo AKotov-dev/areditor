@@ -57,6 +57,12 @@ msgstr ""
 msgid "3) This program writes the rules to /etc/udev/rules.d/51-android.rules:"
 msgstr ""
 
+#: tmainform.label3.caption
+msgid ""
+"Don't forget to include the user in the adbusers group:\n"
+"usermod -aG adbusers $LOGNAME; reboot\n"
+msgstr ""
+
 #: tmainform.label5.caption
 msgid "2) Rule to insert, or a hint:"
 msgstr ""
