@@ -16,7 +16,7 @@ Source3:	%{name}.png
 Source4:	repack.txt
 Source5:	%{name}.policy
 
-BuildRequires:	lazarus >= 1.2.0
+BuildRequires:	lazarus >= 2.0.10
 BuildRequires:	pkgconfig(gtk+-2.0)
 
 Requires:	android-tools >= 31.0.2
