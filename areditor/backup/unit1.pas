@@ -16,6 +16,7 @@ type
     Label1: TLabel;
     DevListBox: TListBox;
     Label2: TLabel;
+    Label3: TLabel;
     Label5: TLabel;
     Memo1: TMemo;
     Memo2: TMemo;
@@ -161,32 +162,72 @@ end;
 //Поиск idVerndor и установка курсора + select
 procedure TMainForm.DevListBoxClick(Sender: TObject);
 var
-  v: integer;
-  idVendor: string;
+  x, y: integer;
+  idVendor, idProduct, Description: string;
 begin
   if DevListBox.Count = 0 then
     Exit;
 
+  //Определяем idVendor, idProduct и Description
   idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
-  // idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
+  idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
+  Description := Copy(DevListBox.Items[DevListBox.ItemIndex], 34,
+    Length(DevListBox.Items[DevListBox.ItemIndex]));
 
-  //Ищем 2 возможных значения вендора
-  v := Pos('ATTR{idVendor}==' + idVendor, Memo1.Text);
-  if v = 0 then
-    v := Pos('ATTR{idVendor}!=' + idVendor, Memo1.Text);
+  //Поиск-1: только Вендор (разрешает все продукты этого вендора)
+  x := Pos('ATTR{idVendor}==' + idVendor + ', ENV{adb_user}="yes"', Memo1.Text);
 
-  if v <> 0 then
+  if x = 0 then
+    //Поиск-2: Вендор и Продукт
+    x := Pos('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
+      idProduct + ', ENV{adb_user}="yes"', Memo1.Text);
+
+  //Выделяем найденную строку idVendor или idVendor + idProduct
+  if x <> 0 then
+  begin
+    Memo1.SetFocus;
+    Memo1.SelStart := x - 1;
+    Memo1.SelLength := Memo1.Lines[Memo1.CaretPos.Y].Length + 1;
+  end;
+
+  //Поиск-3: Вендор и Продукт в списке (GOTO/LABEL)
+  if x = 0 then
+  begin
+    //Cтавим курсор в начало найденной строки
+    x := Pos('ATTR{idVendor}!=' + idVendor, Memo1.Text);
+
+    if x <> 0 then
+    begin
+      Memo1.SetFocus;
+      Memo1.SelStart := x - 1;
+      y := Memo1.CaretPos.Y;
+
+      x := 0;
+      //Пока не найден конец блока вендора - выделять содержимое
+      while Pos('LABEL=', Memo1.Lines[y]) = 0 do
+      begin
+        x := x + Memo1.Lines[y].Length + 1;
+        Memo1.SelLength := x;
+        Inc(y);
+      end;
+
+      //Ищем idProduct в выделенном блоке вендора
+      x := Pos('ATTR{idProduct}==' + idProduct, Memo1.SelText);
+    end;
+  end;
+
+  //Финализация парсинга
+  if x <> 0 then
   begin
     Memo2.Text := SNoAction;
-    Memo1.SelStart := v - 1;
-    Memo1.SelLength := 22;
     AddBtn.Enabled := False;
   end
   else
   begin
     Memo2.Clear;
-    Memo2.Lines.Add('# My Android device');
-    Memo2.Lines.Add('ATTR{idVendor}==' + idVendor + ', ENV{adb_user}="yes"');
+    Memo2.Lines.Add('# ' + Description);
+    Memo2.Lines.Add('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
+      idProduct + ', ENV{adb_user}="yes"');
     Memo1.SelStart := 0;
     AddBtn.Enabled := True;
   end;
