@@ -2,7 +2,7 @@
 name=areditor
 
 [VERSION]
-version=1.1
+version=1.2
 
 [RELEASE]
 release=0.mrx8
@@ -54,18 +54,6 @@ deb=0
 4=/usr/share/doc/areditor/
 5=/usr/share/polkit-1/actions/areditor.policy
 
-[AFTERINSTALL]
-0=#ldconfig
-1=#update-desktop-database -q /usr/share/applications
-2=#update-mime-database /usr/share/mime
-3=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
-
-[AFTERREMOVE]
-0=#ldconfig
-1=#update-desktop-database -q /usr/share/applications
-2=#update-mime-database /usr/share/mime
-3=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
-
 [URL32]
 url32=https://github.com/AKotov-dev/areditor
 
@@ -99,29 +87,34 @@ toolversion=2.0.10
 14=
 15=ArEditor works with the new versions android-tools: https://github.com/AKotov-dev/android-tools-rpm
 16=
-17=v1.1
-18=+ label about adding a user to the adbusers group
-19=
-20=v1.0
-21=+ final release
-22=
-23=v0.7
-24=+ cosmetic edits
-25=+ grammar
-26=
-27=v0.6
-28=+ adapting the search to a new rule format
-29=+ creating a new rule according to the new format
-30=
-31=v0.5
-32=+ automatic addition of rules
-33=+ non-standard scaling in Plasma is taken into account
-34=+ lsusb "Mouse" filter
-35=+ about the program
-36=
-37=v0.4
-38=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
-39=+ launching via pkexec
-40=+ filtering the lsusb output
-41=+ separate thread for udev
-42=+ adb dependence (spec)
+17=v1.2
+18=+ automatically adding a device description
+19=+ idProduct parsing in GOTO idVendor blocks
+20=+ adding idVendor and idProduct for missing devices
+21=
+22=v1.1
+23=+ label about adding a user to the adbusers group
+24=
+25=v1.0
+26=+ final release
+27=
+28=v0.7
+29=+ cosmetic edits
+30=+ grammar
+31=
+32=v0.6
+33=+ adapting the search to a new rule format
+34=+ creating a new rule according to the new format
+35=
+36=v0.5
+37=+ automatic addition of rules
+38=+ non-standard scaling in Plasma is taken into account
+39=+ lsusb "Mouse" filter
+40=+ about the program
+41=
+42=v0.4
+43=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
+44=+ launching via pkexec
+45=+ filtering the lsusb output
+46=+ separate thread for udev
+47=+ adb dependence (spec)
