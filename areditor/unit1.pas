@@ -241,7 +241,7 @@ begin
   begin
     SetFocus;
     SelStart := Pos('# Skip other vendor tests', Text);
-   // Lines.Insert(CaretPos.Y - 1, '');
+    // Lines.Insert(CaretPos.Y - 1, '');
     Lines.Insert(CaretPos.Y + 0, Memo2.Lines[0]);
     Lines.Insert(CaretPos.Y + 1, Memo2.Lines[1]);
     Lines.Insert(CaretPos.Y + 2, '');

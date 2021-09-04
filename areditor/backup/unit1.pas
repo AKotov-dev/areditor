@@ -182,7 +182,7 @@ begin
     x := Pos('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
       idProduct + ', ENV{adb_user}="yes"', Memo1.Text);
 
-  //Выделяем найденную строку idVendor или idVendor + idProduct
+  //Если найдено - выделяем строку idVendor или idVendor + idProduct
   if x <> 0 then
   begin
     Memo1.SetFocus;
@@ -216,7 +216,7 @@ begin
     end;
   end;
 
-  //Финализация парсинга
+  //Решение парсинга
   if x <> 0 then
   begin
     Memo2.Text := SNoAction;
@@ -241,7 +241,7 @@ begin
   begin
     SetFocus;
     SelStart := Pos('# Skip other vendor tests', Text);
-    Lines.Insert(CaretPos.Y - 1, '');
+   // Lines.Insert(CaretPos.Y - 1, '');
     Lines.Insert(CaretPos.Y + 0, Memo2.Lines[0]);
     Lines.Insert(CaretPos.Y + 1, Memo2.Lines[1]);
     Lines.Insert(CaretPos.Y + 2, '');
