@@ -24,7 +24,7 @@ Summary:	Automatic Rule Editor for Android devices
 
 %description
 ArEditor designed for automatically inserting rules for Android devices
-that are not in the lists of rules /etc/udev/rules.d/51-android. rules
+that are not in the lists of rules /etc/udev/rules.d/51-android.rules
 ---
 More information: /usr/share/doc/areditor/repack.txt
 
