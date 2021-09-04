@@ -62,4 +62,6 @@ install -m 0644 %{SOURCE5} %{buildroot}%{_datadir}/polkit-1/actions/
 
 %changelog
 * Thu Sep 02 2021 AKotov-dev <alex_q_2000> 1.2-0.mrx8
-- new version: 1.2-0
+- automatically adding a device description
+- idProduct parsing in GOTO idVendor blocks
+- adding idVendor and idProduct for missing devices
