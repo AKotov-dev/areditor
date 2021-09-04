@@ -3,7 +3,7 @@
 Name:		areditor
 Version:	1.2
 Release:	0.mrx8
-License:	LGPLv3
+License:	GPLv3
 Group:		Applications/System
 Packager:	AKotov-dev
 Vendor:		alex_q_2000
