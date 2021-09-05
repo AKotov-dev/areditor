@@ -24,7 +24,7 @@ Summary:	Automatic Rule Editor for Android devices
 
 %description
 ArEditor designed for automatically inserting rules for Android devices
-that are not in the lists of rules /etc/udev/rules.d/51-android. rules
+that are not in the lists of rules /etc/udev/rules.d/51-android.rules
 ---
 More information: /usr/share/doc/areditor/repack.txt
 
@@ -61,7 +61,7 @@ install -m 0644 %{SOURCE5} %{buildroot}%{_datadir}/polkit-1/actions/
 %{_docdir}/%{name}/*.txt
 
 %changelog
-* Thu Sun 05 2021 AKotov-dev <alex_q_2000> 1.2-1.mga8
+* Sun Sep 05 2021 AKotov-dev <alex_q_2000> 1.2-1.mga8
 - automatically adding a device description
 - idProduct parsing in GOTO idVendor blocks
 - adding idVendor and idProduct for missing devices
