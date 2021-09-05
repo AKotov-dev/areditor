@@ -51,6 +51,7 @@ resourcestring
     '/usr/lib/udev/rules.d/51-android.rules';
   SNoDevices = 'No devices were found...';
   SRestoreDefault = 'Your changes will be reset! Continue?';
+  SReconnectDevice = 'Reconnect your USB device';
 
 var
   MainForm: TMainForm;
@@ -169,6 +170,9 @@ begin
   if DevListBox.Count = 0 then
     Exit;
 
+  //Сбрасываем флаг блока idVendor
+  block := False;
+
   //Определяем idVendor, idProduct и Description
   idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
   idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
@@ -194,8 +198,6 @@ begin
   //Поиск-3: Вендор и Продукт в списке (GOTO/LABEL)
   if x = 0 then
   begin
-    block := False;
-
     //Cтавим курсор в начало найденной строки
     x := Pos('ATTR{idVendor}!=' + idVendor, Memo1.Text);
 
@@ -259,7 +261,7 @@ begin
     Memo1.Lines.Insert(Memo1.CaretPos.Y + 1, Memo2.Lines[0]);
     Memo1.Lines.Insert(Memo1.CaretPos.Y + 2, 'ATTR{idProduct}==' +
       idProduct + ', ENV{adb_adb}="yes"');
-   // Memo1.Lines.Insert(Memo1.CaretPos.Y + 3, '');
+    // Memo1.Lines.Insert(Memo1.CaretPos.Y + 3, '');
   end;
 
   //Сохраняем новые правила
@@ -270,6 +272,8 @@ begin
 
   //Перименяем новые правила
   UdevReload;
+
+  MessageDlg(SReconnectDevice, mtInformation, [mbOK], 0);
 end;
 
 end.
