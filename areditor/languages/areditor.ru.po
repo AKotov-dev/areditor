@@ -121,3 +121,4 @@ msgstr "Устройства не найдены..."
 #: unit1.srestoredefault
 msgid "Your changes will be reset! Continue?"
 msgstr "Ваши изменения будут сброшены! Продолжить?"
+

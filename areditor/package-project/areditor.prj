@@ -12,7 +12,7 @@ group=Applications/System
 
 [DESCRIPTION]
 0=ArEditor designed for automatically inserting rules for Android devices
-1=that are not in the lists of rules /etc/udev/rules.d/51-android.rules
+1=that are not in the lists of rules /etc/udev/rules.d/51-android. rules
 2=---
 3=More information: /usr/share/doc/package_name/repack.txt
 

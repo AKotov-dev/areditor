@@ -1,7 +1,7 @@
 object AboutForm: TAboutForm
-  Left = 415
+  Left = 455
   Height = 299
-  Top = 185
+  Top = 160
   Width = 461
   Anchors = [akLeft]
   Caption = 'About'

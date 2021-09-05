@@ -39,7 +39,9 @@ type
   private
 
   public
-
+  var
+    block: boolean;
+    idVendor, idProduct, Description: string;
   end;
 
 resourcestring
@@ -163,10 +165,12 @@ end;
 procedure TMainForm.DevListBoxClick(Sender: TObject);
 var
   x, y: integer;
-  idVendor, idProduct, Description: string;
 begin
   if DevListBox.Count = 0 then
     Exit;
+
+  //Сбрасываем флаг блока idVendor
+  block := False;
 
   //Определяем idVendor, idProduct и Description
   idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
@@ -198,6 +202,9 @@ begin
 
     if x <> 0 then
     begin
+      //Это блок, вендор найден
+      block := True;
+
       Memo1.SetFocus;
       Memo1.SelStart := x - 1;
       y := Memo1.CaretPos.Y;
@@ -236,16 +243,26 @@ end;
 //Добавляем правила устройства
 procedure TMainForm.AddBtnClick(Sender: TObject);
 begin
-  //Insert Rule
-  with Memo1 do
+  if not block then
   begin
-    SetFocus;
-    SelStart := Pos('# Skip other vendor tests', Text);
+    //Insert Rule
+    Memo1.SetFocus;
+    Memo1.SelStart := Pos('# Skip other vendor tests', Memo1.Text);
     // Lines.Insert(CaretPos.Y - 1, '');
-    Lines.Insert(CaretPos.Y + 0, Memo2.Lines[0]);
-    Lines.Insert(CaretPos.Y + 1, Memo2.Lines[1]);
-    Lines.Insert(CaretPos.Y + 2, '');
+    Memo1.Lines.Insert(Memo1.CaretPos.Y + 0, Memo2.Lines[0]);
+    Memo1.Lines.Insert(Memo1.CaretPos.Y + 1, Memo2.Lines[1]);
+    Memo1.Lines.Insert(Memo1.CaretPos.Y + 2, '');
+  end
+  else
+  begin
+    Memo1.SetFocus;
+    Memo1.SelStart := Pos('ATTR{idVendor}!=' + idVendor, Memo1.Text);
+    Memo1.Lines.Insert(Memo1.CaretPos.Y + 1, Memo2.Lines[0]);
+    Memo1.Lines.Insert(Memo1.CaretPos.Y + 2, 'ATTR{idProduct}==' +
+      idProduct + ', ENV{adb_adb}="yes"');
+    // Memo1.Lines.Insert(Memo1.CaretPos.Y + 3, '');
   end;
+
   //Сохраняем новые правила
   Memo1.Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
 
