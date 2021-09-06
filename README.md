@@ -1,5 +1,5 @@
 # ArEditor - automatic rule editor for Android devices
-Ready-made rpm packages for Mageia-8/9: https://cloud.mail.ru/public/bzv6/85psyDLfc
+51-android.rules: https://github.com/M0Rf30/android-udev-rules
 
 1. In the list of connected USB-Devices (1), find your device that is not recognized when working with ADB and select it with the mouse
 2. If the device is not in the list of rules, the necessary line (2) will be offered to insert into the file with the rules
