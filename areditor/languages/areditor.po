@@ -90,7 +90,7 @@ msgid "No devices were found..."
 msgstr ""
 
 #: unit1.sreconnectdevice
-msgid "Reconnect your USB device."
+msgid "Reconnect your device."
 msgstr ""
 
 #: unit1.srestoredefault

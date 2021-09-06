@@ -119,8 +119,8 @@ msgid "No devices were found..."
 msgstr "Устройства не найдены..."
 
 #: unit1.sreconnectdevice
-msgid "Reconnect your USB device."
-msgstr "Переподключите ваше USB-устройство."
+msgid "Reconnect your device."
+msgstr "Переподключите ваше устройство."
 
 #: unit1.srestoredefault
 msgid "Your changes will be reset! Continue?"

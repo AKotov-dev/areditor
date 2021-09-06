@@ -14,7 +14,7 @@ uses
 
 begin
   RequireDerivedFormResource:=True;
-  Application.Title:='Android Rules Editor v1.2';
+  Application.Title:='Android Rules Editor v1.3';
   Application.Scaled:=True;
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
