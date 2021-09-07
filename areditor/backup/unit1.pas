@@ -49,7 +49,7 @@ resourcestring
     '/usr/lib/udev/rules.d/51-android.rules';
   SNoDevices = 'No devices were found...';
   SRestoreDefault = 'Your changes will be reset! Continue?';
-  SReconnectDevice = 'The device has been added. Reconnect your device.';
+  SReconnectDevice = 'Reconnect your device.';
 
 var
   MainForm: TMainForm;

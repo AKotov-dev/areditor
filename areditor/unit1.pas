@@ -181,7 +181,7 @@ begin
   if x = 0 then
     //Поиск-2: Вендор и Продукт
     x := Pos('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
-      idProduct + ', ENV{adb_user}="yes"', Memo1.Text);
+      idProduct + ',', Memo1.Text);
 
   //Если найдено - выделяем строку idVendor или idVendor + idProduct
   if x <> 0 then
