@@ -1078,4 +1078,30 @@ object MainForm: TMainForm
     ParentColor = False
     ParentFont = False
   end
+  object ENVBox: TComboBox
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = DefaultBtn
+    Left = 472
+    Height = 33
+    Hint = 'Environment variable'
+    Top = 224
+    Width = 412
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 5
+    BorderSpacing.Bottom = 2
+    ItemHeight = 0
+    Items.Strings = (
+      'ENV{adb_adb}="yes"'
+      'ENV{adb_user}="yes"'
+      'ENV{adb_adbfast}="yes"'
+      'ENV{adb_user}="yes", SYMLINK+="android_adb"'
+      'ENV{adb_user}="yes", SYMLINK+="android_fastboot"'
+    )
+    OnChange = ENVBoxChange
+    ParentShowHint = False
+    ShowHint = True
+    Style = csDropDownList
+    TabOrder = 4
+  end
 end

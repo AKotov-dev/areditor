@@ -13,6 +13,7 @@ type
   { TMainForm }
 
   TMainForm = class(TForm)
+    ENVBox: TComboBox;
     Label1: TLabel;
     DevListBox: TListBox;
     Label2: TLabel;
@@ -27,6 +28,7 @@ type
     DefaultBtn: TSpeedButton;
     procedure AddBtnClick(Sender: TObject);
     procedure DevListBoxClick(Sender: TObject);
+    procedure ENVBoxChange(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure AboutBtnClick(Sender: TObject);
@@ -104,6 +106,8 @@ begin
       Memo2.Text := SNoDevices;
       AddBtn.Enabled := False;
     end;
+
+    ENVBox.Enabled := AddBtn.Enabled;
 
   finally
     ExProcess.Free;
@@ -228,25 +232,40 @@ begin
     Memo2.Clear;
     Memo2.Lines.Add('# ' + Description);
     Memo2.Lines.Add('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
-      idProduct + ', ENV{adb_user}="yes"');
+      idProduct + ', ' + ENVBox.Text);
     Memo1.SelStart := 0;
     AddBtn.Enabled := True;
   end;
+
+  //Состояние списка выбора окружения
+  ENVBox.Enabled := AddBtn.Enabled;
+end;
+
+//Выбор нужного ENV
+procedure TMainForm.ENVBoxChange(Sender: TObject);
+begin
+  Memo2.Lines[1] := Copy(Memo2.Lines[1], 1, 49) + ENVBox.Text;
 end;
 
 //Добавляем правила устройства
 procedure TMainForm.AddBtnClick(Sender: TObject);
 begin
   //Insert Rule
-  Memo1.SetFocus;
-  Memo1.SelStart := Pos('LABEL="android_usb_rules_begin"', Memo1.Text);
-  // Lines.Insert(CaretPos.Y - 1, '');
-  Memo1.Lines.Insert(Memo1.CaretPos.Y + 1, Memo2.Lines[0]);
-  Memo1.Lines.Insert(Memo1.CaretPos.Y + 2, Memo2.Lines[1]);
-  Memo1.Lines.Insert(Memo1.CaretPos.Y + 3, '');
+  with Memo1 do
+  begin
+    SetFocus;
+    SelStart := Pos('LABEL="android_usb_rules_begin"', Text);
+    // Lines.Insert(CaretPos.Y - 1, '');
+    Lines.Insert(CaretPos.Y + 1, Memo2.Lines[0]);
+    Lines.Insert(CaretPos.Y + 2, Memo2.Lines[1]);
+    Lines.Insert(CaretPos.Y + 3, '');
 
-  //Сохраняем новые правила
-  Memo1.Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
+    //Сохраняем новые правила
+    Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
+  end;
+
+  //Переменная окружения
+  ENVBox.ItemIndex := 1;
 
   //Курсор и Select
   DevListBox.Click;

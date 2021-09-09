@@ -74,6 +74,14 @@ msgstr ""
 "Загрузить правила по умолчанию\n"
 "/usr/lib/udev/rules.d/51-android.rules\n"
 
+#: tmainform.envbox.hint
+msgid "Environment variable"
+msgstr "Переменная окружения"
+
+#: tmainform.envbox.text
+msgid "ENV{adb_user}=\"yes\""
+msgstr ""
+
 #: tmainform.label1.caption
 msgid "1) USB Devices list:"
 msgstr "1) Список USB-устройств:"
@@ -125,3 +133,4 @@ msgstr "Переподключите ваше устройство."
 #: unit1.srestoredefault
 msgid "Your changes will be reset! Continue?"
 msgstr "Ваши изменения будут сброшены! Продолжить?"
+

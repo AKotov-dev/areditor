@@ -3,8 +3,9 @@
 
 1. In the list of connected USB-Devices (1), find your device that is not recognized when working with ADB and select it with the mouse
 2. If the device is not in the list of rules, the necessary line (2) will be offered to insert into the file with the rules
-3. Click the button "Plus" (Add & Apply) and reconnect the device
-4. Now the device is contained in the list of rules and should be recognized after the `adb` restart  
+3. Specify the environment variable (`ENV{adb_user}="yes"` by default)
+4. Click the button "Plus" (Add & Apply) and reconnect the device
+5. Now the device is contained in the list of rules and should be recognized after the `adb` restart  
 
 **Reasons why Android devices may not be displayed:**
 1. The USB debugging mode is not enabled on the smartphone
@@ -15,4 +16,4 @@
 
 `ArEditor` works with the new versions `android-tools`: https://github.com/AKotov-dev/android-tools-rpm
 
-![](https://github.com/AKotov-dev/areditor/blob/main/ScreenShot6.png)
+![](https://github.com/AKotov-dev/areditor/blob/main/ScreenShot.png)

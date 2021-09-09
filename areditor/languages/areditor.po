@@ -49,6 +49,14 @@ msgid ""
 "/usr/lib/udev/rules.d/51-android.rules\n"
 msgstr ""
 
+#: tmainform.envbox.hint
+msgid "Environment variable"
+msgstr ""
+
+#: tmainform.envbox.text
+msgid "ENV{adb_user}=\"yes\""
+msgstr ""
+
 #: tmainform.label1.caption
 msgid "1) USB Devices list:"
 msgstr ""

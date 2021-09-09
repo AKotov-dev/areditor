@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:		areditor
-Version:	1.3
+Version:	1.4
 Release:	%mkrel 1
 License:	GPLv3
 Group:		Applications/System
@@ -61,7 +61,7 @@ install -m 0644 %{SOURCE5} %{buildroot}%{_datadir}/polkit-1/actions/
 %{_docdir}/%{name}/*.txt
 
 %changelog
-* Sun Sep 05 2021 AKotov-dev <alex_q_2000> 1.3-1.mga8
+* Sun Sep 05 2021 AKotov-dev <alex_q_2000> 1.4-1.mga8
 - automatically adding a device description
 - idProduct parsing in GOTO idVendor blocks
 - adding idVendor and idProduct for missing devices
