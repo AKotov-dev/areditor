@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Buttons, Process, FileUtil, DefaultTranslator;
+  Buttons, Process, FileUtil, DefaultTranslator, Types;
 
 type
 
@@ -247,7 +247,7 @@ begin
   //Формируем строку правила
   Memo2.Lines[1] := Copy(Memo2.Lines[1], 1, 49) + ENVBox.Text;
   //Автоширина по тексту
-  ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 40;
+  ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 50;
 end;
 
 //Добавляем правила устройства
@@ -269,6 +269,8 @@ begin
 
   //Переменная окружения
   ENVBox.ItemIndex := 1;
+  //Автоширина по тексту
+  ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 50;
 
   //Курсор и Select
   DevListBox.Click;

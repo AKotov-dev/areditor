@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Buttons, Process, FileUtil, DefaultTranslator;
+  Buttons, Process, FileUtil, DefaultTranslator, Types;
 
 type
 
@@ -173,6 +173,8 @@ begin
   if DevListBox.Count = 0 then
     Exit;
 
+  Screen.Cursor := crHourGlass;
+
   //Определяем idVendor, idProduct и Description
   idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
   idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
@@ -239,6 +241,7 @@ begin
 
   //Состояние списка выбора окружения
   ENVBox.Enabled := AddBtn.Enabled;
+  Screen.Cursor := crDefault;
 end;
 
 //Выбор нужного ENV
@@ -269,6 +272,8 @@ begin
 
   //Переменная окружения
   ENVBox.ItemIndex := 1;
+  //Автоширина по тексту
+  ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 50;
 
   //Курсор и Select
   DevListBox.Click;
