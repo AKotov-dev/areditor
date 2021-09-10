@@ -173,6 +173,8 @@ begin
   if DevListBox.Count = 0 then
     Exit;
 
+  Screen.Cursor := crHourGlass;
+
   //Определяем idVendor, idProduct и Description
   idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
   idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
@@ -238,7 +240,16 @@ begin
   end;
 
   //Состояние списка выбора окружения
-  ENVBox.Enabled := AddBtn.Enabled;
+  with ENVBox do
+  begin
+    Enabled := AddBtn.Enabled;
+    //Переменная окружения
+    ItemIndex := 1;
+    //Автоширина по тексту
+    Width := Canvas.GetTextWidth(Text) + 50;
+  end;
+
+  Screen.Cursor := crDefault;
 end;
 
 //Выбор нужного ENV
@@ -266,11 +277,6 @@ begin
     //Сохраняем новые правила
     Lines.SaveToFile('/etc/udev/rules.d/51-android.rules');
   end;
-
-  //Переменная окружения
-  ENVBox.ItemIndex := 1;
-  //Автоширина по тексту
-  ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 50;
 
   //Курсор и Select
   DevListBox.Click;
