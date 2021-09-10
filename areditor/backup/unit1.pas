@@ -172,7 +172,7 @@ begin
   //Переменная окружения при щелчке = Default
   ENVBox.ItemIndex := 1;
   //Автоширина по тексту
-  ENVBox.Width := Canvas.GetTextWidth(Text) + 50 - EnvBox.BorderWidth;
+  ENVBox.Width := Canvas.GetTextWidth(Text) + 35;
 
   //Если список устройств не пуст
   if DevListBox.Count <> 0 then
