@@ -105,9 +105,8 @@ begin
     begin
       Memo2.Text := SNoDevices;
       AddBtn.Enabled := False;
+      ENVBox.Enabled := False;
     end;
-
-    ENVBox.Enabled := AddBtn.Enabled;
 
   finally
     ExProcess.Free;
@@ -170,86 +169,87 @@ var
   x, y: integer;
   idVendor, idProduct, Description: string;
 begin
-  if DevListBox.Count = 0 then
-    Exit;
-
-  Screen.Cursor := crHourGlass;
-
-  //Определяем idVendor, idProduct и Description
-  idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
-  idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
-  Description := Copy(DevListBox.Items[DevListBox.ItemIndex], 34,
-    Length(DevListBox.Items[DevListBox.ItemIndex]));
-
-  //Поиск-1: только Вендор (разрешает все продукты этого вендора)
-  x := Pos('ATTR{idVendor}==' + idVendor + ', ENV{adb_user}="yes"', Memo1.Text);
-
-  if x = 0 then
-    //Поиск-2: Вендор и Продукт
-    x := Pos('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
-      idProduct + ',', Memo1.Text);
-
-  //Если найдено - выделяем строку idVendor или idVendor + idProduct
-  if x <> 0 then
+  //Если список устройств не пуст
+  if DevListBox.Count <> 0 then
   begin
-    Memo1.SetFocus;
-    Memo1.SelStart := x - 1;
-    Memo1.SelLength := Memo1.Lines[Memo1.CaretPos.Y].Length + 1;
-  end;
+    Screen.Cursor := crHourGlass;
 
-  //Поиск-3: Вендор и Продукт в списке (GOTO/LABEL)
-  if x = 0 then
-  begin
-    //Cтавим курсор в начало найденной строки
-    x := Pos('ATTR{idVendor}!=' + idVendor, Memo1.Text);
+    //Определяем idVendor, idProduct и Description
+    idVendor := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 24, 4) + '"';
+    idProduct := '"' + Copy(DevListBox.Items[DevListBox.ItemIndex], 29, 4) + '"';
+    Description := Copy(DevListBox.Items[DevListBox.ItemIndex], 34,
+      Length(DevListBox.Items[DevListBox.ItemIndex]));
 
+    //Поиск-1: только Вендор (разрешает все продукты этого вендора)
+    x := Pos('ATTR{idVendor}==' + idVendor + ', ENV{adb_user}="yes"', Memo1.Text);
+
+    if x = 0 then
+      //Поиск-2: Вендор и Продукт
+      x := Pos('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
+        idProduct + ',', Memo1.Text);
+
+    //Если найдено - выделяем строку idVendor или idVendor + idProduct
     if x <> 0 then
     begin
       Memo1.SetFocus;
       Memo1.SelStart := x - 1;
-      y := Memo1.CaretPos.Y;
-
-      x := 0;
-      //Пока не найден конец блока вендора - выделять содержимое
-      while Pos('LABEL=', Memo1.Lines[y]) = 0 do
-      begin
-        x := x + Memo1.Lines[y].Length + 1;
-        Memo1.SelLength := x;
-        Inc(y);
-      end;
-
-      //Ищем idProduct в выделенном блоке вендора
-      x := Pos('ATTR{idProduct}==' + idProduct, Memo1.SelText);
+      Memo1.SelLength := Memo1.Lines[Memo1.CaretPos.Y].Length + 1;
     end;
-  end;
 
-  //Решение парсинга
-  if x <> 0 then
-  begin
-    Memo2.Text := SNoAction;
-    AddBtn.Enabled := False;
-  end
-  else
-  begin
-    Memo2.Clear;
-    Memo2.Lines.Add('# ' + Description);
-    Memo2.Lines.Add('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
-      idProduct + ', ' + ENVBox.Text);
-    Memo1.SelStart := 0;
-    AddBtn.Enabled := True;
-  end;
+    //Поиск-3: Вендор и Продукт в списке (GOTO/LABEL)
+    if x = 0 then
+    begin
+      //Cтавим курсор в начало найденной строки
+      x := Pos('ATTR{idVendor}!=' + idVendor, Memo1.Text);
 
-  //Состояние списка выбора окружения
-  with ENVBox do
-  begin
-    Enabled := AddBtn.Enabled;
-    //Переменная окружения
-    ItemIndex := 1;
-    //Автоширина по тексту
-    Width := Canvas.GetTextWidth(Text) + 50;
-  end;
+      if x <> 0 then
+      begin
+        Memo1.SetFocus;
+        Memo1.SelStart := x - 1;
+        y := Memo1.CaretPos.Y;
 
-  Screen.Cursor := crDefault;
+        x := 0;
+        //Пока не найден конец блока вендора - выделять содержимое
+        while Pos('LABEL=', Memo1.Lines[y]) = 0 do
+        begin
+          x := x + Memo1.Lines[y].Length + 1;
+          Memo1.SelLength := x;
+          Inc(y);
+        end;
+
+        //Ищем idProduct в выделенном блоке вендора
+        x := Pos('ATTR{idProduct}==' + idProduct, Memo1.SelText);
+      end;
+    end;
+
+    //Решение парсинга
+    if x <> 0 then
+    begin
+      Memo2.Text := SNoAction;
+      AddBtn.Enabled := False;
+    end
+    else
+    begin
+      Memo2.Clear;
+      Memo2.Lines.Add('# ' + Description);
+      Memo2.Lines.Add('ATTR{idVendor}==' + idVendor + ', ATTR{idProduct}==' +
+        idProduct + ', ' + ENVBox.Text);
+      Memo1.SelStart := 0;
+      AddBtn.Enabled := True;
+    end;
+
+    //Состояние списка выбора окружения
+    with ENVBox do
+    begin
+      Enabled := AddBtn.Enabled;
+      //Переменная окружения в Default (1)
+      ItemIndex := 1;
+      //Автоширина по тексту
+      Width := Canvas.GetTextWidth(Text) + 50;
+    end;
+
+    Screen.Cursor := crDefault;
+  end;
 end;
 
 //Выбор нужного ENV

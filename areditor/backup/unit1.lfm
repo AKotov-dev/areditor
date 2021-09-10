@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 296
+  Left = 295
   Height = 776
-  Top = 124
+  Top = 58
   Width = 889
   ActiveControl = DevListBox
   Caption = 'MainForm'

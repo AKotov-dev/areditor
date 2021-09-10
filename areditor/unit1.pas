@@ -105,9 +105,8 @@ begin
     begin
       Memo2.Text := SNoDevices;
       AddBtn.Enabled := False;
+      ENVBox.Enabled := False;
     end;
-
-    ENVBox.Enabled := AddBtn.Enabled;
 
   finally
     ExProcess.Free;
@@ -237,17 +236,13 @@ begin
         idProduct + ', ' + ENVBox.Text);
       Memo1.SelStart := 0;
       AddBtn.Enabled := True;
+      ENVBox.Enabled := True;
     end;
 
     //Состояние списка выбора окружения
-    with ENVBox do
-    begin
-      Enabled := AddBtn.Enabled;
-      //Переменная окружения
-      ItemIndex := 1;
-      //Автоширина по тексту
-      Width := Canvas.GetTextWidth(Text) + 50;
-    end;
+    ENVBox.ItemIndex := 1;
+    //Автоширина по тексту
+    ENVBox.Width := Canvas.GetTextWidth(Text) + 50;
 
     Screen.Cursor := crDefault;
   end;
