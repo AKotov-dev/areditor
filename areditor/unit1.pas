@@ -97,16 +97,16 @@ begin
     DevListBox.Items.LoadFromStream(ExProcess.Output);
 
     if DevListBox.Count <> 0 then
-    begin
-      DevListBox.ItemIndex := 0;
-      DevListBox.Click;
-    end
+      DevListBox.ItemIndex := 0
     else
     begin
       Memo2.Text := SNoDevices;
       AddBtn.Enabled := False;
       ENVBox.Enabled := False;
     end;
+
+    //Обработка и принятие решения
+    DevListBox.Click;
 
   finally
     ExProcess.Free;
@@ -169,6 +169,11 @@ var
   x, y: integer;
   idVendor, idProduct, Description: string;
 begin
+  //Переменная окружения при щелчке = Default
+  ENVBox.ItemIndex := 1;
+  //Автоширина по тексту
+  ENVBox.Width := Canvas.GetTextWidth(Text) + 35;
+
   //Если список устройств не пуст
   if DevListBox.Count <> 0 then
   begin
@@ -236,13 +241,9 @@ begin
         idProduct + ', ' + ENVBox.Text);
       Memo1.SelStart := 0;
       AddBtn.Enabled := True;
-      ENVBox.Enabled := True;
     end;
-
     //Состояние списка выбора окружения
-    ENVBox.ItemIndex := 1;
-    //Автоширина по тексту
-    ENVBox.Width := Canvas.GetTextWidth(Text) + 50;
+    ENVBox.Enabled := AddBtn.Enabled;
 
     Screen.Cursor := crDefault;
   end;

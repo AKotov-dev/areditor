@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 296
+  Left = 298
   Height = 776
-  Top = 124
+  Top = 126
   Width = 889
   ActiveControl = DevListBox
   Caption = 'MainForm'
@@ -1082,11 +1082,11 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = DefaultBtn
-    Left = 696
+    Left = 712
     Height = 33
     Hint = 'Environment variable'
     Top = 224
-    Width = 188
+    Width = 172
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 5
     BorderSpacing.Bottom = 2
