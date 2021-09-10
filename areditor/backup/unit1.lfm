@@ -1,5 +1,5 @@
 object MainForm: TMainForm
-  Left = 295
+  Left = 294
   Height = 776
   Top = 58
   Width = 889
@@ -1082,15 +1082,16 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = DefaultBtn
-    Left = 472
+    Left = 696
     Height = 33
     Hint = 'Environment variable'
     Top = 224
-    Width = 412
+    Width = 188
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 5
     BorderSpacing.Bottom = 2
     ItemHeight = 0
+    ItemIndex = 1
     Items.Strings = (
       'ENV{adb_adb}="yes"'
       'ENV{adb_user}="yes"'
@@ -1103,5 +1104,6 @@ object MainForm: TMainForm
     ShowHint = True
     Style = csDropDownList
     TabOrder = 4
+    Text = 'ENV{adb_user}="yes"'
   end
 end

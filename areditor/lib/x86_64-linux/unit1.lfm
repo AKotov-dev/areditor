@@ -1,5 +1,5 @@
 object MainForm: TMainForm
-  Left = 295
+  Left = 294
   Height = 776
   Top = 58
   Width = 889
@@ -1082,11 +1082,11 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = DefaultBtn
-    Left = 472
+    Left = 696
     Height = 33
     Hint = 'Environment variable'
     Top = 224
-    Width = 412
+    Width = 188
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 5
     BorderSpacing.Bottom = 2

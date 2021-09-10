@@ -244,7 +244,10 @@ end;
 //Выбор нужного ENV
 procedure TMainForm.ENVBoxChange(Sender: TObject);
 begin
+  //Формируем строку правила
   Memo2.Lines[1] := Copy(Memo2.Lines[1], 1, 49) + ENVBox.Text;
+  //Автоширина по тексту
+  ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 50;
 end;
 
 //Добавляем правила устройства
