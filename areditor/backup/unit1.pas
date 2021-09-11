@@ -51,7 +51,7 @@ resourcestring
     '/usr/lib/udev/rules.d/51-android.rules';
   SNoDevices = 'No devices were found...';
   SRestoreDefault = 'Your changes will be reset! Continue?';
-  SReconnectDevice = 'Reconnect your device.';
+  SReconnectDevice = 'Done. Reconnect your device.';
 
 var
   MainForm: TMainForm;
@@ -90,7 +90,7 @@ begin
   try
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
-    ExProcess.Parameters.Add('lsusb | grep -ivE "hub$|Reader$|Keyboard$|Mouse$"');
+    ExProcess.Parameters.Add('lsusb | grep -ivE "Hub$|Reader$|Keyboard$|Mouse$"');
     ExProcess.Options := [poUsePipes]; //poStderrToOutPut
     ExProcess.Execute;
 
@@ -171,7 +171,7 @@ var
 begin
   //Переменная окружения при щелчке = Default
   ENVBox.ItemIndex := 1;
-  //Автоширина по тексту
+  //Автоширина по тексту (вне фокуса)
   ENVBox.Width := Canvas.GetTextWidth(Text) + 31;
 
   //Если список устройств не пуст
