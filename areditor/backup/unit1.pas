@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Buttons, Process, FileUtil, DefaultTranslator, Types;
+  Buttons, Process, FileUtil, DefaultTranslator;
 
 type
 
@@ -90,8 +90,8 @@ begin
   try
     ExProcess.Executable := 'bash';
     ExProcess.Parameters.Add('-c');
-    ExProcess.Parameters.Add('lsusb | grep -vE "hub|Hub|Reader|Keyboard|Mouse"');
-    ExProcess.Options := [poUsePipes, poStderrToOutPut];
+    ExProcess.Parameters.Add('lsusb | grep -ivE "hub$|Reader$|Keyboard$|Mouse$"');
+    ExProcess.Options := [poUsePipes]; //poStderrToOutPut
     ExProcess.Execute;
 
     DevListBox.Items.LoadFromStream(ExProcess.Output);
@@ -172,7 +172,7 @@ begin
   //Переменная окружения при щелчке = Default
   ENVBox.ItemIndex := 1;
   //Автоширина по тексту
-  ENVBox.Width := Canvas.GetTextWidth(Text) + 35;
+  ENVBox.Width := Canvas.GetTextWidth(Text) + 31;
 
   //Если список устройств не пуст
   if DevListBox.Count <> 0 then
