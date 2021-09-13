@@ -51,7 +51,7 @@ resourcestring
     '/usr/lib/udev/rules.d/51-android.rules';
   SNoDevices = 'No devices were found...';
   SRestoreDefault = 'Your changes will be reset! Continue?';
-  SReconnectDevice = 'Done. Reconnect your device.';
+  SReconnectDevice = 'Reconnect your device.';
 
 var
   MainForm: TMainForm;
@@ -170,9 +170,9 @@ var
   idVendor, idProduct, Description: string;
 begin
   //Переменная окружения при щелчке = Default
-  ENVBox.ItemIndex := 1;
+  ENVBox.ItemIndex := 0;
   //Автоширина по тексту (вне фокуса)
-  ENVBox.Width := Canvas.GetTextWidth(Text) + 31;
+  // ENVBox.Width := Canvas.GetTextWidth(Text) + 29;
 
   //Если список устройств не пуст
   if DevListBox.Count <> 0 then
@@ -255,7 +255,7 @@ begin
   //Формируем строку правила
   Memo2.Lines[1] := Copy(Memo2.Lines[1], 1, 49) + ENVBox.Text;
   //Автоширина по тексту
-  ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 50;
+  // ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 50;
 end;
 
 //Добавляем правила устройства

@@ -1,5 +1,5 @@
 object MainForm: TMainForm
-  Left = 298
+  Left = 295
   Height = 776
   Top = 58
   Width = 889
@@ -1082,28 +1082,26 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = DefaultBtn
-    Left = 712
+    Left = 688
     Height = 33
     Hint = 'Environment variable'
     Top = 224
-    Width = 172
+    Width = 196
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 5
     BorderSpacing.Bottom = 2
     ItemHeight = 0
-    ItemIndex = 1
+    ItemIndex = 0
     Items.Strings = (
       'ENV{adb_adb}="yes"'
+      'ENV{adb_fast}="yes"'
       'ENV{adb_user}="yes"'
-      'ENV{adb_adbfast}="yes"'
-      'ENV{adb_user}="yes", SYMLINK+="android_adb"'
-      'ENV{adb_user}="yes", SYMLINK+="android_fastboot"'
     )
     OnChange = ENVBoxChange
     ParentShowHint = False
     ShowHint = True
     Style = csDropDownList
     TabOrder = 4
-    Text = 'ENV{adb_user}="yes"'
+    Text = 'ENV{adb_adb}="yes"'
   end
 end

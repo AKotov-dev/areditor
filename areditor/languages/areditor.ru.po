@@ -68,10 +68,10 @@ msgstr ""
 
 #: tmainform.defaultbtn.hint
 msgid ""
-"Loads the default rules\n"
+"Loads the default rules:\n"
 "/usr/lib/udev/rules.d/51-android.rules\n"
 msgstr ""
-"Загрузить правила по умолчанию\n"
+"Загрузить правила по умолчанию:\n"
 "/usr/lib/udev/rules.d/51-android.rules\n"
 
 #: tmainform.envbox.hint
@@ -79,7 +79,7 @@ msgid "Environment variable"
 msgstr "Переменная окружения"
 
 #: tmainform.envbox.text
-msgid "ENV{adb_user}=\"yes\""
+msgid "ENV{adb_adb}=\"yes\""
 msgstr ""
 
 #: tmainform.label1.caption
