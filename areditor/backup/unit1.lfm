@@ -285,7 +285,7 @@ object MainForm: TMainForm
     Cursor = crHandPoint
     Left = 820
     Height = 64
-    Hint = 'Loads the default rules'#10'/usr/lib/udev/rules.d/51-android.rules'
+    Hint = 'Loads the default rules:'#10'/usr/lib/udev/rules.d/51-android.rules'
     Top = 259
     Width = 64
     Anchors = [akTop, akRight, akBottom]
