@@ -1113,9 +1113,9 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Label2
     AnchorSideBottom.Side = asrBottom
     Left = 884
-    Height = 33
+    Height = 32
     Hint = 'Manual search (Ctrl+F) in the file:'#10' /etc/udev/rules.d/51-android.rules'
-    Top = 323
+    Top = 324
     Width = 64
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 5

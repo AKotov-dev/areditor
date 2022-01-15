@@ -367,7 +367,7 @@ begin
   UdevReload;
 
   //Переподключить устройство
-  Application.ProcessMessages;
+ // Application.ProcessMessages;
   MessageDlg(SReconnectDevice, mtInformation, [mbOK], 0);
 end;
 
