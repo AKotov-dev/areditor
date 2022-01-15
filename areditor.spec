@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:		areditor
-Version:	1.4
+Version:	1.5
 Release:	%mkrel 1
 License:	GPLv3
 Group:		Applications/System
@@ -61,6 +61,10 @@ install -m 0644 %{SOURCE5} %{buildroot}%{_datadir}/polkit-1/actions/
 %{_docdir}/%{name}/*.txt
 
 %changelog
+* Sat Jan 15 2022 AKotov-dev <alex_q_2000> 1.5-1.mga8
+- manual search (Ctrl+F) in the file /etc/udev/rules.d/51-android.rules
+- changed the form with information about the program
+
 * Sun Sep 05 2021 AKotov-dev <alex_q_2000> 1.4-1.mga8
 - automatically adding a device description
 - idProduct parsing in GOTO idVendor blocks
