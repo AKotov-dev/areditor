@@ -1,12 +1,12 @@
 object AboutForm: TAboutForm
-  Left = 455
+  Left = 311
   Height = 299
-  Top = 160
-  Width = 461
+  Top = 136
+  Width = 447
   Anchors = [akLeft]
   Caption = 'About'
   ClientHeight = 299
-  ClientWidth = 461
+  ClientWidth = 447
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
@@ -29,7 +29,7 @@ object AboutForm: TAboutForm
     Height = 180
     Top = 41
     Width = 285
-    Caption = 'Automatic addition of rules'#10#10'License: GPLv3'#10'Compilation: Lazarus 2.0.10'#10'Author: alex_q_2000 (C) 2021'#10#10'URL: https://github.com/AKotov-dev/areditor'#10#10'Many thanks:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith'
+    Caption = 'Automatic addition of rules'#10#10'License: GPLv3'#10'Compilation: Lazarus 2.0.10'#10'Author: alex_q_2000 (C) 2021'#10#10'Many thanks:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith; JoesCat, M0Rf30 && Co'#10#10'URL: https://github.com/AKotov-dev/areditor'
     Font.Height = -13
     Font.Name = 'Sans'
     ParentColor = False
@@ -101,7 +101,7 @@ object AboutForm: TAboutForm
     Left = 8
     Height = 8
     Top = 238
-    Width = 449
+    Width = 435
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 8
     BorderSpacing.Top = 17
@@ -116,7 +116,7 @@ object AboutForm: TAboutForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Side = asrBottom
-    Left = 193
+    Left = 186
     Height = 35
     Top = 253
     Width = 78

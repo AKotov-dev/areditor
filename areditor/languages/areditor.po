@@ -22,12 +22,12 @@ msgid ""
 "Compilation: Lazarus 2.0.10\n"
 "Author: alex_q_2000 (C) 2021\n"
 "\n"
-"URL: https://github.com/AKotov-dev/areditor\n"
-"\n"
 "Many thanks:\n"
 "Morgan Leijström, David GEIGER,\n"
 "Thomas Backlund, Aurelien Oudelet,\n"
-"Lewis Smith\n"
+"Lewis Smith; JoesCat, M0Rf30 && Co\n"
+"\n"
+"URL: https://github.com/AKotov-dev/areditor\n"
 msgstr ""
 
 #: tmainform.aboutbtn.hint
@@ -73,6 +73,12 @@ msgstr ""
 
 #: tmainform.label5.caption
 msgid "2) Rule to insert, or a hint:"
+msgstr ""
+
+#: tmainform.searchbtn.hint
+msgid ""
+"Manual search (Ctrl+F) in the file:\n"
+" /etc/udev/rules.d/51-android.rules\n"
 msgstr ""
 
 #: tmainform.statictext1.caption

@@ -2,7 +2,7 @@
 name=areditor
 
 [VERSION]
-version=1.4
+version=1.5
 
 [RELEASE]
 release=0.mrx8
@@ -87,46 +87,50 @@ toolversion=2.0.10
 14=
 15=ArEditor works with the new versions android-tools: https://github.com/AKotov-dev/android-tools-rpm
 16=
-17=v1.4
-18=+ Selecting an environment variable
-19=ENV{adb_adb}="yes"
-20=ENV{adb_user}="yes" (default)
-21=ENV{adb_adbfast}="yes"
-22=ENV{adb_user}="yes", SYMLINK+="android_adb"
-23=ENV{adb_user}="yes", SYMLINK+="android_fastboot"
-24=
-25=v1.3
-26=+ simply add a device to the top of the list
-27=+ deb packages
+17=v1.5
+18=+ manual search (Ctrl+F) in the file /etc/udev/rules.d/51-android.rules
+19=+ edited the form with information about the program
+20=
+21=v1.4
+22=+ Selecting an environment variable
+23=ENV{adb_adb}="yes"
+24=ENV{adb_user}="yes" (default)
+25=ENV{adb_adbfast}="yes"
+26=ENV{adb_user}="yes", SYMLINK+="android_adb"
+27=ENV{adb_user}="yes", SYMLINK+="android_fastboot"
 28=
-29=v1.2
-30=+ automatically adding a device description
-31=+ idProduct parsing in GOTO idVendor blocks
-32=+ adding idVendor and idProduct for missing devices
-33=
-34=v1.1
-35=+ label about adding a user to the adbusers group
-36=
-37=v1.0
-38=+ final release
-39=
-40=v0.7
-41=+ cosmetic edits
-42=+ grammar
+29=v1.3
+30=+ simply add a device to the top of the list
+31=+ deb packages
+32=
+33=v1.2
+34=+ automatically adding a device description
+35=+ idProduct parsing in GOTO idVendor blocks
+36=+ adding idVendor and idProduct for missing devices
+37=
+38=v1.1
+39=+ label about adding a user to the adbusers group
+40=
+41=v1.0
+42=+ final release
 43=
-44=v0.6
-45=+ adapting the search to a new rule format
-46=+ creating a new rule according to the new format
+44=v0.7
+45=+ cosmetic edits
+46=+ grammar
 47=
-48=v0.5
-49=+ automatic addition of rules
-50=+ non-standard scaling in Plasma is taken into account
-51=+ lsusb "Mouse" filter
-52=+ about the program
-53=
-54=v0.4
-55=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
-56=+ launching via pkexec
-57=+ filtering the lsusb output
-58=+ separate thread for udev
-59=+ adb dependence (spec)
+48=v0.6
+49=+ adapting the search to a new rule format
+50=+ creating a new rule according to the new format
+51=
+52=v0.5
+53=+ automatic addition of rules
+54=+ non-standard scaling in Plasma is taken into account
+55=+ lsusb "Mouse" filter
+56=+ about the program
+57=
+58=v0.4
+59=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
+60=+ launching via pkexec
+61=+ filtering the lsusb output
+62=+ separate thread for udev
+63=+ adb dependence (spec)

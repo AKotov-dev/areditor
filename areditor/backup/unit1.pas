@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Buttons, Process, FileUtil, DefaultTranslator;
+  Buttons, Process, FileUtil, LCLType, DefaultTranslator;
 
 type
 
@@ -14,6 +14,7 @@ type
 
   TMainForm = class(TForm)
     ENVBox: TComboBox;
+    FindDialog1: TFindDialog;
     Label1: TLabel;
     DevListBox: TListBox;
     Label2: TLabel;
@@ -23,15 +24,20 @@ type
     Memo2: TMemo;
     AddBtn: TSpeedButton;
     AboutBtn: TSpeedButton;
+    SearchBtn: TSpeedButton;
     StaticText1: TStaticText;
     UpdateBtn: TSpeedButton;
     DefaultBtn: TSpeedButton;
     procedure AddBtnClick(Sender: TObject);
     procedure DevListBoxClick(Sender: TObject);
+    procedure DevListBoxKeyDown(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure ENVBoxChange(Sender: TObject);
+    procedure FindDialog1Find(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure FormKeyUp(Sender: TObject; var Key: word; Shift: TShiftState);
     procedure FormShow(Sender: TObject);
     procedure AboutBtnClick(Sender: TObject);
+    procedure SearchBtnClick(Sender: TObject);
     procedure UpdateBtnClick(Sender: TObject);
     procedure DefaultBtnClick(Sender: TObject);
     procedure StartScan;
@@ -150,6 +156,13 @@ begin
   MainForm.Caption := Application.Title;
 end;
 
+//Вызов диалога поиска
+procedure TMainForm.FormKeyUp(Sender: TObject; var Key: word; Shift: TShiftState);
+begin
+  if (Key = Ord('F')) and (ssCtrl in Shift) then
+    SearchBtn.Click;
+end;
+
 procedure TMainForm.FormShow(Sender: TObject);
 begin
   //Загружаем файл 51-android.rules и перечитываем устройства
@@ -161,6 +174,15 @@ procedure TMainForm.AboutBtnClick(Sender: TObject);
 begin
   AboutForm := TAboutForm.Create(Self);
   AboutForm.ShowModal;
+end;
+
+procedure TMainForm.SearchBtnClick(Sender: TObject);
+begin
+  //Позиция окна поиска
+  FindDialog1.Top := MainForm.Top + 100;
+  FindDialog1.Left := MainForm.Left + 100;
+  //Показать диалог поиска
+  FindDialog1.Execute;
 end;
 
 //Поиск idVerndor и установка курсора + select
@@ -249,6 +271,14 @@ begin
   end;
 end;
 
+//Отключаем Ctrl + комбинации в ListBox
+procedure TMainForm.DevListBoxKeyDown(Sender: TObject; var Key: word;
+  Shift: TShiftState);
+begin
+  if (Key <> VK_UP) and (Key <> VK_DOWN) then
+    Key := 0;
+end;
+
 //Выбор нужного ENV
 procedure TMainForm.ENVBoxChange(Sender: TObject);
 begin
@@ -256,6 +286,61 @@ begin
   Memo2.Lines[1] := Copy(Memo2.Lines[1], 1, 49) + ENVBox.Text;
   //Автоширина по тексту
   // ENVBox.Width := ENVBox.Canvas.GetTextWidth(ENVBox.Text) + 50;
+end;
+
+
+//Поиск текста
+procedure TMainForm.FindDialog1Find(Sender: TObject);
+var
+  i: integer;
+  Buf, Str: string;
+begin
+  Str := FindDialog1.FindText;
+
+  if frDown in FindDialog1.Options then
+  begin
+    Buf := Copy(Memo1.Text, Memo1.SelStart + Memo1.SelLength + 1, Length(Memo1.Text));
+    if not (frMatchCase in FindDialog1.Options) then
+    begin
+      Buf := UpperCase(Buf);
+      i := Pos(UpperCase(Str), Buf);
+    end
+    else
+      i := Pos(Str, Buf);
+    if i = 0 then
+    begin
+      //  ShowMessage('не ');
+      Exit;
+    end
+    else
+    begin
+      i := i + Memo1.SelStart + Memo1.SelLength;
+      Memo1.SelStart := i - 1;
+      Memo1.SelLength := Length(Str);
+      Exit;
+    end;
+  end
+  else
+  begin
+    Buf := Copy(Memo1.Text, 0, Memo1.SelStart);
+    if not (frMatchCase in FindDialog1.Options) then
+    begin
+      Buf := UpperCase(Buf);
+      Str := UpperCase(Str);
+    end;
+
+    for i := Length(Buf) + 1 - Length(Str) downto 1 do
+    begin
+      if Copy(Buf, i, Length(Str)) = Str then
+      begin
+        Memo1.SelStart := i - 1;
+        Memo1.SelLength := Length(Str);
+        Exit;
+      end;
+    end;
+    // ShowMessage('не ');
+    Exit;
+  end;
 end;
 
 //Добавляем правила устройства
@@ -282,6 +367,7 @@ begin
   UdevReload;
 
   //Переподключить устройство
+  Application.ProcessMessages;
   MessageDlg(SReconnectDevice, mtInformation, [mbOK], 0);
 end;
 
