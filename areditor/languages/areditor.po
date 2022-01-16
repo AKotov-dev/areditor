@@ -78,7 +78,7 @@ msgstr ""
 #: tmainform.searchbtn.hint
 msgid ""
 "Manual search (Ctrl+F) in the file:\n"
-" /etc/udev/rules.d/51-android.rules\n"
+"/etc/udev/rules.d/51-android.rules\n"
 msgstr ""
 
 #: tmainform.statictext1.caption

@@ -105,10 +105,10 @@ msgstr "2) Правило для вставки или подсказка:"
 #: tmainform.searchbtn.hint
 msgid ""
 "Manual search (Ctrl+F) in the file:\n"
-" /etc/udev/rules.d/51-android.rules\n"
+"/etc/udev/rules.d/51-android.rules\n"
 msgstr ""
 "Ручной поиск (Ctrl+F) в файле:\n"
-" /etc/udev/rules.d/51-android.rules\n"
+"/etc/udev/rules.d/51-android.rules\n"
 
 #: tmainform.statictext1.caption
 msgid "License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru"

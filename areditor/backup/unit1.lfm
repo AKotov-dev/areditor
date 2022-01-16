@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 288
+  Left = 325
   Height = 778
-  Top = 56
+  Top = 35
   Width = 953
   ActiveControl = DevListBox
   Caption = 'MainForm'
@@ -21,10 +21,10 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 0
     Height = 171
-    Top = 50
+    Top = 52
     Width = 953
     Anchors = [akTop, akLeft, akRight]
-    BorderSpacing.Top = 4
+    BorderSpacing.Top = 5
     Font.Height = -13
     Font.Name = 'Monospace'
     ItemHeight = 0
@@ -36,12 +36,14 @@ object MainForm: TMainForm
     TopIndex = -1
   end
   object Label1: TLabel
+    AnchorSideLeft.Control = Owner
     AnchorSideBottom.Control = DevListBox
-    Left = 8
+    Left = 5
     Height = 15
-    Top = 30
+    Top = 32
     Width = 144
     Anchors = [akLeft, akBottom]
+    BorderSpacing.Left = 5
     BorderSpacing.Bottom = 5
     Caption = '1) USB Devices list:'
     Font.Height = -13
@@ -55,14 +57,14 @@ object MainForm: TMainForm
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Cursor = crHandPoint
-    Left = 884
+    Left = 886
     Height = 42
     Hint = 'Update the list'
-    Top = 4
+    Top = 5
     Width = 64
     Anchors = [akTop, akRight]
-    BorderSpacing.Top = 4
-    BorderSpacing.Right = 5
+    BorderSpacing.Top = 5
+    BorderSpacing.Right = 3
     Glyph.Data = {
       36100000424D3610000000000000360000002800000020000000200000000100
       2000000000000010000064000000640000000000000000000000FFFFFF00FFFF
@@ -209,8 +211,8 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StaticText1
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 399
-    Top = 361
+    Height = 393
+    Top = 367
     Width = 953
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -227,13 +229,15 @@ object MainForm: TMainForm
     TabOrder = 3
   end
   object Label2: TLabel
+    AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Memo2
     AnchorSideTop.Side = asrBottom
-    Left = 8
+    Left = 5
     Height = 15
-    Top = 341
+    Top = 347
     Width = 514
-    BorderSpacing.Top = 18
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 20
     BorderSpacing.Bottom = 5
     Caption = '3) This program writes the rules to /etc/udev/rules.d/51-android.rules:'
     Font.Height = -13
@@ -249,8 +253,8 @@ object MainForm: TMainForm
     AnchorSideRight.Control = AddBtn
     Left = 0
     Height = 64
-    Top = 259
-    Width = 818
+    Top = 263
+    Width = 820
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
     BorderSpacing.Right = 1
@@ -264,13 +268,15 @@ object MainForm: TMainForm
     TabOrder = 2
   end
   object Label5: TLabel
+    AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = DevListBox
     AnchorSideTop.Side = asrBottom
-    Left = 8
+    Left = 5
     Height = 15
-    Top = 239
+    Top = 243
     Width = 196
-    BorderSpacing.Top = 18
+    BorderSpacing.Left = 5
+    BorderSpacing.Top = 20
     BorderSpacing.Bottom = 3
     Caption = '2) Rule to insert, or a hint:'
     Font.Height = -13
@@ -286,13 +292,13 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 884
+    Left = 886
     Height = 64
     Hint = 'Loads the default rules:'#10'/usr/lib/udev/rules.d/51-android.rules'
-    Top = 259
+    Top = 263
     Width = 64
     Anchors = [akTop, akRight, akBottom]
-    BorderSpacing.Right = 5
+    BorderSpacing.Right = 3
     Glyph.Data = {
       36240000424D3624000000000000360000002800000030000000300000000100
       2000000000000024000064000000640000000000000000000000000000000000
@@ -611,10 +617,10 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = Memo2
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 819
+    Left = 821
     Height = 64
     Hint = 'Add and Apply'
-    Top = 259
+    Top = 263
     Width = 64
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 1
@@ -921,10 +927,10 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = UpdateBtn
     AnchorSideBottom.Side = asrBottom
     Cursor = crHandPoint
-    Left = 835
+    Left = 837
     Height = 42
     Hint = 'About'
-    Top = 4
+    Top = 5
     Width = 48
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 1
@@ -1068,9 +1074,9 @@ object MainForm: TMainForm
   object Label3: TLabel
     AnchorSideTop.Control = AboutBtn
     AnchorSideRight.Control = AboutBtn
-    Left = 479
+    Left = 481
     Height = 30
-    Top = 4
+    Top = 5
     Width = 352
     Anchors = [akTop, akRight]
     BorderSpacing.Right = 4
@@ -1084,15 +1090,15 @@ object MainForm: TMainForm
   object ENVBox: TComboBox
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    AnchorSideBottom.Control = DefaultBtn
-    Left = 745
+    AnchorSideBottom.Control = Label5
+    AnchorSideBottom.Side = asrBottom
+    Left = 747
     Height = 33
     Hint = 'Environment variable'
-    Top = 224
+    Top = 225
     Width = 203
     Anchors = [akRight, akBottom]
-    BorderSpacing.Right = 5
-    BorderSpacing.Bottom = 2
+    BorderSpacing.Right = 3
     ItemHeight = 0
     ItemIndex = 0
     Items.Strings = (
@@ -1112,13 +1118,13 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Label2
     AnchorSideBottom.Side = asrBottom
-    Left = 884
-    Height = 33
-    Hint = 'Manual search (Ctrl+F) in the file:'#10' /etc/udev/rules.d/51-android.rules'
-    Top = 323
+    Left = 886
+    Height = 32
+    Hint = 'Manual search (Ctrl+F) in the file:'#10'/etc/udev/rules.d/51-android.rules'
+    Top = 330
     Width = 64
     Anchors = [akRight, akBottom]
-    BorderSpacing.Right = 5
+    BorderSpacing.Right = 3
     Glyph.Data = {
       36090000424D3609000000000000360000002800000018000000180000000100
       2000000000000009000064000000640000000000000000000000000000000000
