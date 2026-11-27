@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Buttons, Process, FileUtil, LCLType, DefaultTranslator;
+  Buttons, Process, FileUtil, LCLType, DefaultTranslator, ExtCtrls;
 
 type
 
@@ -15,6 +15,7 @@ type
   TMainForm = class(TForm)
     ENVBox: TComboBox;
     FindDialog1: TFindDialog;
+    Image1: TImage;
     Label1: TLabel;
     DevListBox: TListBox;
     Label2: TLabel;
@@ -66,9 +67,9 @@ implementation
 
 uses Udev_TRD, About_Unit;
 
-{$R *.lfm}
+  {$R *.lfm}
 
-{ TMainForm }
+  { TMainForm }
 
 //Restore Default
 procedure TMainForm.RestoreDefault;
@@ -140,7 +141,19 @@ begin
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
+var
+  bmp: TBitmap;
 begin
+  //Устраняем баг иконки приложения
+  bmp := TBitmap.Create;
+  try
+    bmp.PixelFormat := pf32bit;
+    bmp.Assign(Image1.Picture.Graphic);
+    Application.Icon.Assign(bmp);
+  finally
+    bmp.Free;
+  end;
+
   //Есть ли основной файл правил? Нет - Выход!
   if not FileExists('/usr/lib/udev/rules.d/51-android.rules') then
   begin

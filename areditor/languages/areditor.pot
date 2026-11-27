@@ -1,0 +1,112 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: taboutform.button1.caption
+msgid "Ok"
+msgstr ""
+
+#: taboutform.caption
+msgctxt "taboutform.caption"
+msgid "About"
+msgstr ""
+
+#: taboutform.label1.caption
+msgid "ArEditor"
+msgstr ""
+
+#: taboutform.label2.caption
+msgid ""
+"Automatic addition of rules\n"
+"  \n"
+"License: GPLv3\n"
+"Compilation: Lazarus 4.4\n"
+"  \n"
+"Special thanks to:\n"
+"Morgan Leijström, David Geiger,\n"
+"Thomas Backlund, Aurelien Oudelet,\n"
+"Lewis Smith, JoesCat, M0Rf30 && Co.\n"
+"  \n"
+"URL: https://github.com/AKotov-dev/areditor"
+msgstr ""
+
+#: tmainform.aboutbtn.hint
+msgctxt "tmainform.aboutbtn.hint"
+msgid "About"
+msgstr ""
+
+#: tmainform.addbtn.hint
+msgid "Add and Apply"
+msgstr ""
+
+#: tmainform.caption
+msgid "MainForm"
+msgstr ""
+
+#: tmainform.defaultbtn.hint
+msgid ""
+"Loads the default rules:\n"
+"/usr/lib/udev/rules.d/51-android.rules"
+msgstr ""
+
+#: tmainform.envbox.hint
+msgid "Environment variable"
+msgstr ""
+
+#: tmainform.envbox.text
+msgid "ENV{adb_adb}=\"yes\""
+msgstr ""
+
+#: tmainform.label1.caption
+msgid "1) USB Devices list:"
+msgstr ""
+
+#: tmainform.label2.caption
+msgid "3) This program writes the rules to /etc/udev/rules.d/51-android.rules:"
+msgstr ""
+
+#: tmainform.label3.caption
+msgid ""
+"Don't forget to include the user in the adbusers group:\n"
+"usermod -aG adbusers $LOGNAME; reboot"
+msgstr ""
+
+#: tmainform.label5.caption
+msgid "2) Rule to insert, or a hint:"
+msgstr ""
+
+#: tmainform.searchbtn.hint
+msgid ""
+"Manual search (Ctrl+F) in the file:\n"
+"/etc/udev/rules.d/51-android.rules"
+msgstr ""
+
+#: tmainform.statictext1.caption
+msgid "License: GPLv3   Author: alex_q_2000 (C) 2026   URL: https://github.com/AKotov-dev/areditor"
+msgstr ""
+
+#: tmainform.updatebtn.hint
+msgid "Update the list"
+msgstr ""
+
+#: unit1.sfilenotfound
+msgid ""
+"The main rules file was not found:\n"
+"/usr/lib/udev/rules.d/51-android.rules"
+msgstr ""
+
+#: unit1.snoaction
+msgid "The device is already in the list of rules. No action is needed."
+msgstr ""
+
+#: unit1.snodevices
+msgid "No devices were found..."
+msgstr ""
+
+#: unit1.sreconnectdevice
+msgid "Reconnect your device."
+msgstr ""
+
+#: unit1.srestoredefault
+msgid "Your changes will be reset! Continue?"
+msgstr ""
+

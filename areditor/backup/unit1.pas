@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls,
-  Buttons, Process, FileUtil, LCLType, DefaultTranslator;
+  Buttons, Process, FileUtil, LCLType, DefaultTranslator, ExtCtrls;
 
 type
 
@@ -15,6 +15,7 @@ type
   TMainForm = class(TForm)
     ENVBox: TComboBox;
     FindDialog1: TFindDialog;
+    Image1: TImage;
     Label1: TLabel;
     DevListBox: TListBox;
     Label2: TLabel;
@@ -367,7 +368,7 @@ begin
   UdevReload;
 
   //Переподключить устройство
- // Application.ProcessMessages;
+  // Application.ProcessMessages;
   MessageDlg(SReconnectDevice, mtInformation, [mbOK], 0);
 end;
 

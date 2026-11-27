@@ -2,10 +2,10 @@
 name=areditor
 
 [VERSION]
-version=1.5
+version=1.6
 
 [RELEASE]
-release=0.mrx8
+release=0.mrx10
 
 [GROUP]
 group=Applications/System
@@ -20,7 +20,7 @@ group=Applications/System
 maintainer=Alex Kotov
 
 [VENDOR]
-vendor=alex_q_2000 (C) 2021
+vendor=alex_q_2000 (C) 2026
 
 [SUMMARY]
 summary=Automatic Rule Editor for Android devices
@@ -32,16 +32,13 @@ urlcopy=https://github.com/AKotov-dev/areditor
 license=GPLv3
 
 [DEPS]
-deps=adb
+deps=libgtk2.0-0 adb
 
 [META]
 meta=0
 
 [NOARCH]
 noarch=0
-
-[SIGN]
-sign=0
 
 [DEB]
 deb=1
@@ -57,9 +54,6 @@ deb=1
 [URL32]
 url32=https://github.com/AKotov-dev/areditor
 
-[URL64]
-url64=
-
 [PROGRAMNAME]
 programname=ArEditor
 
@@ -67,7 +61,7 @@ programname=ArEditor
 devtool=Lazarus
 
 [TOOLVERSION]
-toolversion=2.0.10
+toolversion=4.4
 
 [INFO]
 0=ArEditor - 51-android.rules editor for Android devices
@@ -87,50 +81,55 @@ toolversion=2.0.10
 14=
 15=ArEditor works with the new versions android-tools: https://github.com/AKotov-dev/android-tools-rpm
 16=
-17=v1.5
-18=+ manual search (Ctrl+F) in the file /etc/udev/rules.d/51-android.rules
-19=+ changed the form with information about the program
-20=
-21=v1.4
-22=+ Selecting an environment variable
-23=ENV{adb_adb}="yes"
-24=ENV{adb_user}="yes" (default)
-25=ENV{adb_adbfast}="yes"
-26=ENV{adb_user}="yes", SYMLINK+="android_adb"
-27=ENV{adb_user}="yes", SYMLINK+="android_fastboot"
-28=
-29=v1.3
-30=+ simply add a device to the top of the list
-31=+ deb packages
-32=
-33=v1.2
-34=+ automatically adding a device description
-35=+ idProduct parsing in GOTO idVendor blocks
-36=+ adding idVendor and idProduct for missing devices
+17=v1.6
+18=+ Build in Lazarus-4.4
+19=+ Added dependency on gtk2 / libgtk2.0-0
+20=+ RPM and DEB packages for Mageia/Fedora/Ubuntu/Debian
+21=
+22=v1.5
+23=+ manual search (Ctrl+F) in the file /etc/udev/rules.d/51-android.rules
+24=+ changed the form with information about the program
+25=
+26=v1.4
+27=+ Selecting an environment variable
+28=ENV{adb_adb}="yes"
+29=ENV{adb_user}="yes" (default)
+30=ENV{adb_adbfast}="yes"
+31=ENV{adb_user}="yes", SYMLINK+="android_adb"
+32=ENV{adb_user}="yes", SYMLINK+="android_fastboot"
+33=
+34=v1.3
+35=+ simply add a device to the top of the list
+36=+ deb packages
 37=
-38=v1.1
-39=+ label about adding a user to the adbusers group
-40=
-41=v1.0
-42=+ final release
-43=
-44=v0.7
-45=+ cosmetic edits
-46=+ grammar
-47=
-48=v0.6
-49=+ adapting the search to a new rule format
-50=+ creating a new rule according to the new format
-51=
-52=v0.5
-53=+ automatic addition of rules
-54=+ non-standard scaling in Plasma is taken into account
-55=+ lsusb "Mouse" filter
-56=+ about the program
-57=
-58=v0.4
-59=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
-60=+ launching via pkexec
-61=+ filtering the lsusb output
-62=+ separate thread for udev
-63=+ adb dependence (spec)
+38=v1.2
+39=+ automatically adding a device description
+40=+ idProduct parsing in GOTO idVendor blocks
+41=+ adding idVendor and idProduct for missing devices
+42=
+43=v1.1
+44=+ label about adding a user to the adbusers group
+45=
+46=v1.0
+47=+ final release
+48=
+49=v0.7
+50=+ cosmetic edits
+51=+ grammar
+52=
+53=v0.6
+54=+ adapting the search to a new rule format
+55=+ creating a new rule according to the new format
+56=
+57=v0.5
+58=+ automatic addition of rules
+59=+ non-standard scaling in Plasma is taken into account
+60=+ lsusb "Mouse" filter
+61=+ about the program
+62=
+63=v0.4
+64=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
+65=+ launching via pkexec
+66=+ filtering the lsusb output
+67=+ separate thread for udev
+68=+ adb dependence (spec)

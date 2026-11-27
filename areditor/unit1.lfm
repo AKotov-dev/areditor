@@ -1,18 +1,18 @@
 object MainForm: TMainForm
-  Left = 287
+  Left = 316
   Height = 778
-  Top = 122
+  Top = 128
   Width = 953
   ActiveControl = DevListBox
   Caption = 'MainForm'
   ClientHeight = 778
   ClientWidth = 953
   KeyPreview = True
+  Position = poDesktopCenter
+  LCLVersion = '4.4.0.0'
   OnCreate = FormCreate
   OnKeyUp = FormKeyUp
   OnShow = FormShow
-  Position = poDesktopCenter
-  LCLVersion = '2.0.10.0'
   object DevListBox: TListBox
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = UpdateBtn
@@ -28,19 +28,19 @@ object MainForm: TMainForm
     Font.Height = -13
     Font.Name = 'Monospace'
     ItemHeight = 0
-    OnClick = DevListBoxClick
-    OnKeyDown = DevListBoxKeyDown
     ParentFont = False
     ScrollWidth = 951
     TabOrder = 0
     TopIndex = -1
+    OnClick = DevListBoxClick
+    OnKeyDown = DevListBoxKeyDown
   end
   object Label1: TLabel
     AnchorSideLeft.Control = Owner
     AnchorSideBottom.Control = DevListBox
     Left = 5
-    Height = 15
-    Top = 32
+    Height = 17
+    Top = 30
     Width = 144
     Anchors = [akLeft, akBottom]
     BorderSpacing.Left = 5
@@ -197,10 +197,10 @@ object MainForm: TMainForm
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF0000CC701900C76BBEFFFFFF00FFFFFF00FFFFFF00FFFFFF00
     }
-    OnClick = UpdateBtnClick
     ShowCaption = False
     ShowHint = True
     ParentShowHint = False
+    OnClick = UpdateBtnClick
   end
   object Memo1: TMemo
     AnchorSideLeft.Control = Owner
@@ -211,8 +211,8 @@ object MainForm: TMainForm
     AnchorSideBottom.Control = StaticText1
     AnchorSideBottom.Side = asrBottom
     Left = 0
-    Height = 393
-    Top = 367
+    Height = 389
+    Top = 371
     Width = 953
     Align = alBottom
     Anchors = [akTop, akLeft, akRight, akBottom]
@@ -233,8 +233,8 @@ object MainForm: TMainForm
     AnchorSideTop.Control = Memo2
     AnchorSideTop.Side = asrBottom
     Left = 5
-    Height = 15
-    Top = 347
+    Height = 17
+    Top = 349
     Width = 514
     BorderSpacing.Left = 5
     BorderSpacing.Top = 20
@@ -253,7 +253,7 @@ object MainForm: TMainForm
     AnchorSideRight.Control = AddBtn
     Left = 0
     Height = 64
-    Top = 263
+    Top = 265
     Width = 820
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 5
@@ -272,7 +272,7 @@ object MainForm: TMainForm
     AnchorSideTop.Control = DevListBox
     AnchorSideTop.Side = asrBottom
     Left = 5
-    Height = 15
+    Height = 17
     Top = 243
     Width = 196
     BorderSpacing.Left = 5
@@ -295,7 +295,7 @@ object MainForm: TMainForm
     Left = 886
     Height = 64
     Hint = 'Loads the default rules:'#10'/usr/lib/udev/rules.d/51-android.rules'
-    Top = 263
+    Top = 265
     Width = 64
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 3
@@ -591,10 +591,10 @@ object MainForm: TMainForm
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000
     }
-    OnClick = DefaultBtnClick
     ShowCaption = False
     ShowHint = True
     ParentShowHint = False
+    OnClick = DefaultBtnClick
   end
   object StaticText1: TStaticText
     Left = 0
@@ -602,7 +602,7 @@ object MainForm: TMainForm
     Top = 760
     Width = 953
     Align = alBottom
-    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2021   URL: https://linuxforum.ru'
+    Caption = 'License: GPLv3   Author: alex_q_2000 (C) 2026   URL: https://github.com/AKotov-dev/areditor'
     Color = clDefault
     Font.Color = clGray
     Font.Height = -11
@@ -620,7 +620,7 @@ object MainForm: TMainForm
     Left = 821
     Height = 64
     Hint = 'Add and Apply'
-    Top = 263
+    Top = 265
     Width = 64
     Anchors = [akTop, akRight, akBottom]
     BorderSpacing.Right = 1
@@ -916,10 +916,10 @@ object MainForm: TMainForm
       3300000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000
     }
-    OnClick = AddBtnClick
     ShowCaption = False
     ShowHint = True
     ParentShowHint = False
+    OnClick = AddBtnClick
   end
   object AboutBtn: TSpeedButton
     AnchorSideTop.Control = UpdateBtn
@@ -1066,16 +1066,16 @@ object MainForm: TMainForm
       AFEBC4BDAFC8C3BDB09BC5BDAE59C8B6B60E0000000000000000000000000000
       0000000000000000000000000000000000000000000000000000
     }
-    OnClick = AboutBtnClick
     ShowCaption = False
     ShowHint = True
     ParentShowHint = False
+    OnClick = AboutBtnClick
   end
   object Label3: TLabel
     AnchorSideTop.Control = AboutBtn
     AnchorSideRight.Control = AboutBtn
     Left = 481
-    Height = 30
+    Height = 34
     Top = 5
     Width = 352
     Anchors = [akTop, akRight]
@@ -1095,7 +1095,7 @@ object MainForm: TMainForm
     Left = 747
     Height = 33
     Hint = 'Environment variable'
-    Top = 225
+    Top = 227
     Width = 203
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 3
@@ -1106,12 +1106,12 @@ object MainForm: TMainForm
       'ENV{adb_fast}="yes"'
       'ENV{adb_user}="yes"'
     )
-    OnChange = ENVBoxChange
     ParentShowHint = False
     ShowHint = True
     Style = csDropDownList
     TabOrder = 1
     Text = 'ENV{adb_adb}="yes"'
+    OnChange = ENVBoxChange
   end
   object SearchBtn: TSpeedButton
     AnchorSideRight.Control = Owner
@@ -1121,7 +1121,7 @@ object MainForm: TMainForm
     Left = 886
     Height = 32
     Hint = 'Manual search (Ctrl+F) in the file:'#10'/etc/udev/rules.d/51-android.rules'
-    Top = 330
+    Top = 334
     Width = 64
     Anchors = [akRight, akBottom]
     BorderSpacing.Right = 3
@@ -1201,9 +1201,69 @@ object MainForm: TMainForm
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000
     }
-    OnClick = SearchBtnClick
     ShowHint = True
     ParentShowHint = False
+    OnClick = SearchBtnClick
+  end
+  object Image1: TImage
+    Left = 264
+    Height = 96
+    Top = 8
+    Width = 96
+    AutoSize = True
+    Picture.Data = {
+      1754506F727461626C654E6574776F726B477261706869631006000089504E47
+      0D0A1A0A0000000D49484452000000600000006008020000006DFAE06F000000
+      0373424954080808DBE14FE0000000097048597300000EC400000EC401952B0E
+      1B000005B349444154789CED9D5B6C14551880E7B6B3974EB794764B4B8BAEB5
+      176CDA1004094A9346F0923E48A209899A58135FD017627C3044A39110624C24
+      C42734A251F44DDF68444D10D00AD40A4D4B958B2DA565975EB6ED6E97EDDE77
+      8E0F8B93C13DDB7FBAE72CDB87FF4BD39CD9F9CF3FFF7E9D99337B9953F1E899
+      2601C98F54EA02563B28080005012885759345D5A9560B82C8B79AA2A12F2566
+      899029A067818276B51D79A8EA695164124408B114270A22DB5F82107269F2E8
+      C0CD2305F42D5090DBD1C068471084A9C53F7B875F5D3EA6CC5EFBF2B6538C7B
+      AA288A9ABDB6B0BE050AE2854E528C01C5A694823C5ADB9E2D27968F1145F9FE
+      14930F2641C3BEAFDC8E0DDEEA5D8575B7296555DA46960240FAC70F7BB48E46
+      CF330567601AE6FDC173F34B575832149BF1C0CF7391BF5832B05F07ADEE919E
+      7924613D070D4E7E7AD9F7356392E291482F3266601594D6E3693DCE98643583
+      2F3500501000B7EB20A7ADBAABF510AF6C74083973FD9D786A21BBD4D9F4BEE6
+      A8CF8DF2057F1FF11FE7B54D6E8214D9E9ADDAC92B1B15428822398CC5BA8A6D
+      555A6B6E583C39CF71A3788801A0200014048082005010000A02E036CC67F4B8
+      2F789E57B63C908C9E301666EF0CC5FEBB2632138C8E71DC243741D164A077B8
+      8757362B9CBDFEEE7DD80A1E62002808000501A0200014048082005010000A02
+      4041002808000501A0200014048082005010000A024041002808000501A02000
+      14048082005010000A02404100280880DB47CF2ED5B373E3C7D45503373F9909
+      5FCAB61F7DE08DF56BB6E7C684A2E37DA31F64DBB5EE2D5BBDFBA8A94E5D792B
+      96BAFB0DBBAE9643E58E86DC985B0BBF0EF9BE5861F979E12648961C0D954F50
+      575D367DA5B2D2D54C0D5365CD683BD52A6A0C214496ECC6624DF926EA771423
+      71BFF5B241F010034041002808000501A020001404C06D984F676213F3BF5057
+      C59273467B2EF2B7AA94E5C6846213463B9A0C5053114130DF7A35B538104950
+      46F4F9A5ABD6CB06E12628969A3B39B2170C1BF21D1BF21D5B3E66263C682555
+      DFE801ABC531808718000A024041002808000501701BC56C725963F5B3D455FE
+      D0F948622ADBAEABD8E6A6BD47114F0527164E67DB9A7D7D3DED2D1122083702
+      3FA6F56876D15BF5945D71E7862DC626A6C3170B780A54B80972D8D63EB9F123
+      EAAA9323AF1B82DAEA5E6C5EF75C6ECC6C78D810E4296FA7A62284DC0E5D8824
+      EE0A7ACCFB26F5ED8EAB53DF7114848718000A024041002808000501A020009E
+      537465F47CF38D11532B430DD34D73F81142F2A7322525F952E9605FEB701314
+      89FBBFB9D0495D954CDF31DABFFD73E0DCD887B93184A48DF6E4C2D97CA912A9
+      90D13E31DC439DE1CC7C5F2B3BDC0411418FD36EB1FD1FA94C2405CDF7A893A4
+      9554EC93275901CF41004C7B504365A753ADE6554A91F094B7B3746712D4D1C0
+      ED3E7042F448622A915EB42B6E5194357B1DAFCC8C9478264E83706CF2F4B5FD
+      D3E18B8AE4685BFFD2F6C6B7257155D4C6B988FEF1C38BD1716391084257CB41
+      87AD12ECD83776307BD295247574B6779D7BF3C39E6EB0D765FFF1A9D01FE647
+      B67AF7AD2D6B5979E179E12CE876A87F263C687E644713303F427069747EE99A
+      2A6B9ABDCE38B2A289C0D0AD2F3BEA7B2469B90A0377466ECCFD647EA4BDFE95
+      820ACF4BE977637FE8FC58E064303A661EDA15D939317FBAB5F6798704EF7D45
+      65950CF3D626962E05A517248A32AD0CD1F4BB9470162489365954CD3FE0936C
+      AED9DDD57248BAF74583DBB9E185CDDFDB950A6873F24A37B752389F83BADB3F
+      23E49E9712AA52BE7C1755D15445DBBDE9DBDEE1D71EA9DB3316F8A1A1B273F3
+      86BD0EDB1A70733B9ADE7BBC71BFF9119B4CF9E09F05CE825445838368AC7135
+      AAB2ABD2D564572A2A9C0F5AB12308824D7609459E90BBF4A3984177C7E72EB5
+      A6C6BDC9A158B2737F2850902F788EFA991423D1E48C2008B1D49CC075267B42
+      84E97BAFCEAC23E2FFF6599ED20FF3AB1C1404808200FE0566A8AE5A4A2C5CB3
+      0000000049454E44AE426082
+    }
+    Visible = False
   end
   object FindDialog1: TFindDialog
     Options = [frDown, frFindNext, frHideWholeWord, frDisableWholeWord, frEntireScope, frHideEntireScope, frHidePromptOnReplace, frButtonsAtBottom]

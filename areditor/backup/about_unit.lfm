@@ -1,21 +1,21 @@
 object AboutForm: TAboutForm
-  Left = 311
-  Height = 299
-  Top = 136
+  Left = 334
+  Height = 311
+  Top = 131
   Width = 447
   Anchors = [akLeft]
   Caption = 'About'
-  ClientHeight = 299
+  ClientHeight = 311
   ClientWidth = 447
+  Position = poMainFormCenter
+  LCLVersion = '4.4.0.0'
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  Position = poMainFormCenter
-  LCLVersion = '2.0.10.0'
   object Label1: TLabel
     Left = 128
-    Height = 19
-    Top = 8
+    Height = 21
+    Top = 10
     Width = 79
     Caption = 'ArEditor'
     Font.Height = -17
@@ -26,10 +26,10 @@ object AboutForm: TAboutForm
   end
   object Label2: TLabel
     Left = 128
-    Height = 180
+    Height = 187
     Top = 41
     Width = 285
-    Caption = 'Automatic addition of rules'#10#10'License: GPLv3'#10'Compilation: Lazarus 2.0.10'#10'Author: alex_q_2000 (C) 2021'#10#10'Many thanks:'#10'Morgan Leijström, David GEIGER,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith, JoesCat, M0Rf30 && Co'#10#10'URL: https://github.com/AKotov-dev/areditor'
+    Caption = 'Automatic addition of rules'#10'  '#10'License: GPLv3'#10'Compilation: Lazarus 4.4'#10'  '#10'Special thanks to:'#10'Morgan Leijström, David Geiger,'#10'Thomas Backlund, Aurelien Oudelet,'#10'Lewis Smith, JoesCat, M0Rf30 && Co.'#10'  '#10'URL: https://github.com/AKotov-dev/areditor'
     Font.Height = -13
     Font.Name = 'Sans'
     ParentColor = False
@@ -38,7 +38,7 @@ object AboutForm: TAboutForm
   object Image1: TImage
     Left = 8
     Height = 96
-    Top = 8
+    Top = 10
     Width = 96
     AutoSize = True
     Picture.Data = {
@@ -100,7 +100,7 @@ object AboutForm: TAboutForm
     AnchorSideBottom.Side = asrBottom
     Left = 8
     Height = 8
-    Top = 238
+    Top = 245
     Width = 435
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 8
@@ -118,13 +118,13 @@ object AboutForm: TAboutForm
     AnchorSideBottom.Side = asrBottom
     Left = 186
     Height = 35
-    Top = 253
+    Top = 260
     Width = 78
     BorderSpacing.Top = 15
     BorderSpacing.Right = 172
     Caption = 'Ok'
-    OnClick = Button1Click
     ParentFont = False
     TabOrder = 0
+    OnClick = Button1Click
   end
 end

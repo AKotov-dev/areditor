@@ -1,0 +1,135 @@
+[NAME]
+name=areditor
+
+[VERSION]
+version=1.6
+
+[RELEASE]
+release=0.mrx10
+
+[GROUP]
+group=Applications/System
+
+[DESCRIPTION]
+0=ArEditor designed for automatically inserting rules for Android devices
+1=that are not in the lists of rules /etc/udev/rules.d/51-android. rules
+2=---
+3=More information: /usr/share/doc/package_name/repack.txt
+
+[MAINTAINER]
+maintainer=Alex Kotov
+
+[VENDOR]
+vendor=alex_q_2000 (C) 2026
+
+[SUMMARY]
+summary=Automatic Rule Editor for Android devices
+
+[URLCOPY]
+urlcopy=https://github.com/AKotov-dev/areditor
+
+[LICENSE]
+license=GPLv3
+
+[DEPS]
+deps=gtk2 adb
+
+[META]
+meta=0
+
+[NOARCH]
+noarch=0
+
+[DEB]
+deb=0
+
+[FILES]
+0=/usr/bin/areditor
+1=/usr/share/areditor/
+2=/usr/share/applications/areditor.desktop
+3=/usr/share/icons/areditor.png
+4=/usr/share/doc/areditor/
+5=/usr/share/polkit-1/actions/areditor.policy
+
+[URL32]
+url32=https://github.com/AKotov-dev/areditor
+
+[PROGRAMNAME]
+programname=ArEditor
+
+[DEVTOOL]
+devtool=Lazarus
+
+[TOOLVERSION]
+toolversion=4.4
+
+[INFO]
+0=ArEditor - 51-android.rules editor for Android devices
+1=---
+2=1. In the list of connected USB-Devices (1), find your device that is not recognized when working with adb and select it with the mouse
+3=2. If the device is not in the list of rules, the necessary line (2) will be offered to insert into the file with the rules
+4=3. Click the button "Plus" (Add & Apply)
+5=4. Now the device is contained in the list of rules and should be recognized after the adb restart
+6=
+7=Reasons why Android devices may not be displayed:
+8=---
+9=1. The USB debugging mode is not enabled on the smartphone
+10=2. The device is not in the list of rules /usr/lib/udev/rules.d/51-android.rules
+11=3. The User is not included in the group described in /usr/lib/udev/rules.d/51-android.rules
+12=4. The connection is hindered by the old key, which you need to delete and restart ADB:
+13=adb kill-server; rm -rf ~/.android/*; adb start-server
+14=
+15=ArEditor works with the new versions android-tools: https://github.com/AKotov-dev/android-tools-rpm
+16=
+17=v1.6
+18=+ Build in Lazarus-4.4
+19=+ Added dependency on gtk2 / libgtk2.0-0
+20=+ RPM and DEB packages for Mageia/Fedora/Ubuntu/Debian
+21=
+22=v1.5
+23=+ manual search (Ctrl+F) in the file /etc/udev/rules.d/51-android.rules
+24=+ changed the form with information about the program
+25=
+26=v1.4
+27=+ Selecting an environment variable
+28=ENV{adb_adb}="yes"
+29=ENV{adb_user}="yes" (default)
+30=ENV{adb_adbfast}="yes"
+31=ENV{adb_user}="yes", SYMLINK+="android_adb"
+32=ENV{adb_user}="yes", SYMLINK+="android_fastboot"
+33=
+34=v1.3
+35=+ simply add a device to the top of the list
+36=+ deb packages
+37=
+38=v1.2
+39=+ automatically adding a device description
+40=+ idProduct parsing in GOTO idVendor blocks
+41=+ adding idVendor and idProduct for missing devices
+42=
+43=v1.1
+44=+ label about adding a user to the adbusers group
+45=
+46=v1.0
+47=+ final release
+48=
+49=v0.7
+50=+ cosmetic edits
+51=+ grammar
+52=
+53=v0.6
+54=+ adapting the search to a new rule format
+55=+ creating a new rule according to the new format
+56=
+57=v0.5
+58=+ automatic addition of rules
+59=+ non-standard scaling in Plasma is taken into account
+60=+ lsusb "Mouse" filter
+61=+ about the program
+62=
+63=v0.4
+64=+ changed rules in /etc/udev/rules.d/51-android.rules (a copy of the main file: /usr/lib/udev/rules.d/51-android.rules)
+65=+ launching via pkexec
+66=+ filtering the lsusb output
+67=+ separate thread for udev
+68=+ adb dependence (spec)
