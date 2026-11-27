@@ -29,7 +29,7 @@ summary=Automatic Rule Editor for Android devices
 urlcopy=https://github.com/AKotov-dev/areditor
 
 [LICENSE]
-license=GPLv3
+license=GPL-3.0-or-later
 
 [DEPS]
 deps=gtk2 adb

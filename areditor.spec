@@ -1,8 +1,8 @@
 %global debug_package %{nil}
 
 Name:		areditor
-Version:	1.5
-Release:	%mkrel 1
+Version:	1.6
+Release:	0.mrx10
 License:	GPLv3
 Group:		Applications/System
 Packager:	AKotov-dev
@@ -16,10 +16,10 @@ Source3:	%{name}.png
 Source4:	repack.txt
 Source5:	%{name}.policy
 
-BuildRequires:	lazarus >= 2.0.10
+BuildRequires:	lazarus >= 4.4
 BuildRequires:	pkgconfig(gtk+-2.0)
 
-Requires:	android-tools >= 31.0.2
+Requires:	android-tools >= 35.0.2
 Summary:	Automatic Rule Editor for Android devices
 
 %description
@@ -61,6 +61,10 @@ install -m 0644 %{SOURCE5} %{buildroot}%{_datadir}/polkit-1/actions/
 %{_docdir}/%{name}/*.txt
 
 %changelog
+* Fri Nov 27 2026 AKotov-dev <alex_q_2000> 1.6-0.mrx10
+- Build in Lazarus-4.4
+- changed the form with information about the program
+
 * Sat Jan 15 2022 AKotov-dev <alex_q_2000> 1.5-1.mga8
 - manual search (Ctrl+F) in the file /etc/udev/rules.d/51-android.rules
 - changed the form with information about the program
