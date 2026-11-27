@@ -13,7 +13,5 @@
 3. The User is not included in the group described in `/etc/udev/rules.d/51-android.rules`
 4. The connection is hindered by the old key, which you need to delete and restart `adb`:  
 `adb kill-server; rm -rf ~/.android/*; adb start-server`  
-
-`ArEditor` works with the new versions `android-tools`: https://github.com/AKotov-dev/android-tools-rpm
-
+  
 ![](https://github.com/AKotov-dev/areditor/blob/main/ScreenShot-v1.5.png)
