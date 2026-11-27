@@ -11,7 +11,8 @@
 1. The USB debugging mode is not enabled on the smartphone
 2. The device is not in the list of rules `/etc/udev/rules.d/51-android.rules`
 3. The User is not included in the group described in `/etc/udev/rules.d/51-android.rules`
-4. The connection is hindered by the old key, which you need to delete and restart `adb`:  
-`adb kill-server; rm -rf ~/.android/*; adb start-server`  
-  
+4. The connection is hindered by the old key, which you need to delete and restart `adb`:
+```
+adb kill-server; rm -rf ~/.android/*; adb start-server
+```
 ![](https://github.com/AKotov-dev/areditor/blob/main/ScreenShot-v1.5.png)
